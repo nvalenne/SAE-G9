@@ -15,7 +15,7 @@ CREATE TABLE Compte(
    identifiant VARCHAR(50),
    mdp VARCHAR(50),
    mail VARCHAR(50),
-   role LOGICAL,
+   role BOOLEAN,
    PRIMARY KEY(id)
 );
 
