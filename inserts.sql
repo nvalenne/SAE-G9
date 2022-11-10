@@ -1,29 +1,29 @@
-DROP TABLE if exists ProposeS;
-DROP TABLE if exists ProposeA;
-DROP TABLE if exists EmplacementAttraction;
-DROP TABLE if exists EmplacementStand;
-DROP TABLE if exists Stand;
-DROP TABLE if exists Attraction;
-DROP TABLE if exists Prestataire;
-DROP TABLE if exists Services;
-DROP TABLE if exists Compte;
-DROP TABLE if exists TypeAttraction;
-DROP TABLE if exists TypeStand;
+DROP TABLE if exists ProposeS CASCADE;
+DROP TABLE if exists ProposeA CASCADE;
+DROP TABLE if exists EmplacementAttraction CASCADE;
+DROP TABLE if exists EmplacementStand CASCADE;
+DROP TABLE if exists Stand CASCADE;
+DROP TABLE if exists Attraction CASCADE;
+DROP TABLE if exists Prestataire CASCADE;
+DROP TABLE if exists Services CASCADE;
+DROP TABLE if exists Compte CASCADE;
+DROP TABLE if exists TypeAttraction CASCADE;
+DROP TABLE if exists TypeStand CASCADE;
 
 CREATE TABLE TypeStand(
-   idTypeStand INT,
+   idTypeStand SERIAL,
    designation VARCHAR(50),
    PRIMARY KEY(idTypeStand)
 );
 
 CREATE TABLE TypeAttraction(
-   idTypeAttraction INT,
+   idTypeAttraction SERIAL,
    designation VARCHAR(50),
    PRIMARY KEY(idTypeAttraction)
 );
 
 CREATE TABLE Compte(
-   id INT,
+   id SERIAL,
    identifiant VARCHAR(50),
    mdp VARCHAR(50),
    mail VARCHAR(50),
@@ -32,13 +32,13 @@ CREATE TABLE Compte(
 );
 
 CREATE TABLE Services(
-   idService INT,
+   idService SERIAL,
    nomService VARCHAR(50),
    PRIMARY KEY(idService)
 );
 
 CREATE TABLE Prestataire(
-   idPrestataire INT,
+   idPrestataire SERIAL,
    nom VARCHAR(50),
    adresse VARCHAR(50),
    id INT NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE Prestataire(
 );
 
 CREATE TABLE Attraction(
-   idAttraction INT AUTO_INCREMENT,
+   idAttraction SERIAL,
    nom VARCHAR(50),
    prixAdulte DECIMAL(5,2),
    prixEnfant DECIMAL(5,2),
@@ -64,7 +64,7 @@ CREATE TABLE Attraction(
 );
 
 CREATE TABLE Stand(
-   idStand INT,
+   idStand SERIAL,
    nom VARCHAR(50),
    prix DECIMAL(5,2),
    recette DECIMAL(6,2),
@@ -78,7 +78,7 @@ CREATE TABLE Stand(
 );
 
 CREATE TABLE EmplacementStand(
-   idEmplacementStand INT,
+   idEmplacementStand SERIAL,
    prix DECIMAL(6,2),
    taille DECIMAL(6,2),
    idStand INT,
@@ -88,7 +88,7 @@ CREATE TABLE EmplacementStand(
 );
 
 CREATE TABLE EmplacementAttraction(
-   idEmplacementAttraction INT,
+   idEmplacementAttraction SERIAL,
    prix DECIMAL(6,2),
    taille DECIMAL(6,2),
    idAttraction INT,
@@ -178,11 +178,7 @@ INSERT INTO EmplacementStand (idEmplacementStand, prix, taille) VALUES
 (3,10,100);
 
 
-#select * from TypeAttraction;
-
-#SELECT idTypeAttraction,nom FROM Attraction Where idTypeAttraction = 6;
-#select * from Attraction;
-select nom FROM Prestataire;
-select nom, adresse from Prestataire;
-select * from Attraction INNER JOIN Prestataire P on Attraction.idPrestataire = P.idPrestataire
-where P.nom = 'jean martin';
+--select nom FROM Prestataire;
+--select nom, adresse from Prestataire;
+select idattraction, Attraction.nom, P.idPrestataire from Attraction INNER JOIN Prestataire P on Attraction.idPrestataire = P.idPrestataire
+where P.nom = 'élizabeth jourdon';
