@@ -1,16 +1,17 @@
 <template>
-  <html>
   <div class="accueil">
+    <NavBar/>
     <h1>Carte normalement intéractive</h1>
   </div>
-  </html>
 </template>
 
 <script>
 
+import NavBar from "@/components/NavBar";
 export default {
   name: 'CarteView',
   components: {
+    NavBar
 
   },
   metaInfo: {
