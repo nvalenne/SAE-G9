@@ -1,14 +1,32 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Accueil from '../views/Accueil.vue'
+import AccueilView from '../views/AccueilView.vue'
+import CarteView from "../views/CarteView";
+import ContactView from "../views/ContactView";
+import ListeManegeView from "../views/ListeManegeView";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Accueil
+    name: 'AccueilView',
+    component: AccueilView
+  },
+  {
+    path: '/carte',
+    name: 'CarteView',
+    component: CarteView
+  },
+  {
+    path: '/contact',
+    name: 'ContactView',
+    component: ContactView
+  },
+  {
+    path: '/liste_manege',
+    name: 'ListeManegeView',
+    component: ListeManegeView
   }
 ]
 
