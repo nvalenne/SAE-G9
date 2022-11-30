@@ -4,6 +4,7 @@ import AccueilView from '../views/AccueilView.vue'
 import CarteView from "../views/CarteView";
 import ContactView from "../views/ContactView";
 import ListeManegeView from "../views/ListeManegeView";
+import ConnexionView from "@/views/ConnexionView";
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/liste_manege',
     name: 'ListeManegeView',
     component: ListeManegeView
+  },
+  {
+    path: '/connexion',
+    name: 'connexionView',
+    component: ConnexionView
   }
 ]
 

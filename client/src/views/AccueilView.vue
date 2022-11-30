@@ -2,7 +2,12 @@
     <div>
       <NavBar/>
       <div class="accueil">
-        <h1>Acceuil</h1>
+        <h1>Pissforaine</h1>
+        <img src="../../public/image_acceuil.jpg">
+      </div>
+      <hr>
+      <div class="desciption">
+        <p>Fete forraine trop cool !!!!!!!!!!!</p>
       </div>
     </div>
 </template>
@@ -19,3 +24,19 @@ export default {
   }
 }
 </script>
+
+<style>
+div{
+  padding: 20px;
+}
+
+img{
+  alignment: center;
+}
+
+hr{
+  border: solid lightblue 5px;
+  border-radius: 10px;
+  width: 80%;
+}
+</style>
