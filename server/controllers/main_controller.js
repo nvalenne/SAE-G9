@@ -1,6 +1,20 @@
 const mainService = require("../services/main_service");
 
 
+exports.test = (req,res) =>{
+    mainService.test((error,results)=>{ // modifier nom fonction
+        if (error) {
+            console.log(error);
+            return res.status(400).send({ success: 0, data: error });
+        }
+        return res.status(200).send({
+            success: 1,
+            data: results,
+        });
+    });
+    res.render("Accueil")  //modifier nom fonction
+}
+
 
 exports.page_accueil = (req,res) =>{
     mainService.test((error,results)=>{ // modifier nom fonction

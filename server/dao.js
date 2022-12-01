@@ -1,6 +1,6 @@
-import pg from "pg";
+const pg = require("pg");
 
-export class AppDAO {
+class AppDAO {
     constructor() {
         const credentials = {
             user: process.env.DB_USER,
@@ -87,3 +87,5 @@ export class AppDAO {
             client.release();}
     }
 }
+
+module.exports = AppDAO;

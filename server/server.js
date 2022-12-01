@@ -1,12 +1,19 @@
-import express from "express";
-import dotenv from "dotenv";
-import {AppDAO} from "./dao.js";
+const express = require("express");
+const dotenv = require("dotenv");
 dotenv.config();
+
+//BDD
+const AppDao = require("./dao");
+const AttractionRepository = require("./repository/AttractionRepository");
+
+global.dao = new AppDao();
+global.prizesRepo = new AttractionRepository(dao);
+
+//
 
 const port = process.env.PORT;
 const app = express();
-global.dao = new AppDAO();
-global.prizesRepo = new PrizesRepository(dao);
+
 
 
 app.listen(port, () => {
