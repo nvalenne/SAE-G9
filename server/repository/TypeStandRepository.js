@@ -49,7 +49,7 @@ class TypeStandRepository{
     async updateTypeStand(id,designation){
         let params = [id,designation];
         let sql = `UPDATE TYPESTAND SET designation=$2
-                        WHERE idTypeStand=$`;
+                        WHERE idTypeStand=$1`;
         return await this.dao.get(sql,params);
     }
 

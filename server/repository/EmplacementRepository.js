@@ -47,10 +47,10 @@ class EmplacementRepository{
         return await this.dao.delete(sql, params);
     }
 
-    async updateEmplcament(id,prix,taille){
+    async updateEmplacament(id,prix,taille){
         let params = [id,prix,taille];
         let sql = `UPDATE EMPLACEMENT SET prix=$2, taille =$2
-                        WHERE idEmplcaement=$`;
+                        WHERE idEmplcaement=$1`;
         return await this.dao.get(sql,params);
     }
 

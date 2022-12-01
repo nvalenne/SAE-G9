@@ -20,7 +20,6 @@ class TypeAttractionRepository{
 
         //Scipt SQL ?
 
-
     }
 
     async countTypeAttraction(){
@@ -49,7 +48,7 @@ class TypeAttractionRepository{
     async updateTypeAttraction(id,designation){
         let params = [id,designation];
         let sql = `UPDATE TypeAttraction SET designation=$2
-                        WHERE idTypeAttraction=$`;
+                        WHERE idTypeAttraction=$1`;
         return await this.dao.get(sql,params);
     }
 
