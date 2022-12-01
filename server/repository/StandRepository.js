@@ -8,7 +8,7 @@ class StandRepository{
 
     async createTable(){
         const sql =`CREATE TABLE STAND(
-                            idStand INT NOT NULL AUTO_INCREMENT,
+                            idStand SERIAL NOT NULL ,
                             nom VARCHAR(50),
                             prix DECIMAL(5,2),
                             recette DECIMAL(6,2),

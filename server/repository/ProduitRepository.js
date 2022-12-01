@@ -8,7 +8,7 @@ class ProduitRepository{
 
     async createTable(){
         const sql =`CREATE TABLE PRODUIT(
-                        idProduit INT NOT NULL AUTO_INCREMENT,
+                        idProduit SERIAL NOT NULL ,
                         nomProduit VARCHAR(50),
                         PRIMARY KEY(idProduit)
                         );`;

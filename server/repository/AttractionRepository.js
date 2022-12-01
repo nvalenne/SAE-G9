@@ -8,7 +8,7 @@ class AttractionRepository{
 
     async createTable(){
         const sql =`CREATE TABLE ATTRACTION(
-                        idAttraction INT NOT NULL AUTO_INCREMENT,
+                        idAttraction SERIAL NOT NULL ,
                         nom VARCHAR(50),
                         prixAdulte DECIMAL(5,2),
                         prixEnfant DECIMAL(5,2),
@@ -21,7 +21,6 @@ class AttractionRepository{
                         FOREIGN KEY(idTypeAttraction) REFERENCES TYPEATTRACTION(idTypeAttraction),
                         FOREIGN KEY(idCompte) REFERENCES COMPTE(idCompte),
                         PRIMARY KEY(idAttraction)
-                        ON DELETE CASCADE
                         );`;
         return this.dao.run(sql, "ATTRACTION tables OK");
     }

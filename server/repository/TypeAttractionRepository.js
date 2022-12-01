@@ -8,7 +8,7 @@ class TypeAttractionRepository{
 
     async createTable(){
         const sql =`CREATE TABLE TypeAttraction(
-                        idTypeAttraction INT NOT NULL AUTO_INCREMENT,
+                        idTypeAttraction SERIAL NOT NULL ,
                         designation VARCHAR(50),
                         PRIMARY KEY(idTypeAttraction)
                         );`;

@@ -8,7 +8,7 @@ class PlacementARepository{
 
     async createTable(){
         const sql =`CREATE TABLE PLACEMENTA(
-                        idPlacementA INT NOT NULL AUTO_INCREMENT,
+                        idPlacementA SERIAL NOT NULL ,
                         idAttraction INT NOT NULL,
                         idEmplacement INT NOT NULL,
                         FOREIGN KEY(idAttraction) REFERENCES ATTRACTION(idAttraction),

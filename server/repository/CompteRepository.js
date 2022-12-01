@@ -8,7 +8,7 @@ class CompteRepository{
 
     async createTable(){
         const sql =`CREATE TABLE COMPTE(
-                         idCompte INT NOT NULL AUTO_INCREMENT,
+                         idCompte SERIAL NOT NULL,
                          identifiant VARCHAR(50),
                          mdp VARCHAR(50),
                          mail VARCHAR(50),
