@@ -8,7 +8,7 @@ class TypeStandRepository{
 
     async createTable(){
         const sql =`CREATE TABLE TYPESTAND(
-                        idTypeStand INT NOT NULL AUTO_INCREMENT,
+                        idTypeStand SERIAL NOT NULL ,
                         designation VARCHAR(50),
                         PRIMARY KEY(idTypeStand)
                         );`;

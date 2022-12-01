@@ -8,7 +8,7 @@ class ServiceRepository{
 
     async createTable(){
         const sql =`CREATE TABLE SERVICE(
-                        idService INT NOT NULL AUTO_INCREMENT,
+                        idService SERIAL NOT NULL ,
                         nomService VARCHAR(50),
                         PRIMARY KEY(idService)
                         );`;

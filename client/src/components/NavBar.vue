@@ -1,5 +1,8 @@
 <template>
   <div id="navbar">
+    <div class="logo">
+      <img src="../../public/logo.png" style="margin-bottom: 15px;width: 60px;">
+    </div>
     <nav>
       <a><router-link to="/">Accueil</router-link></a>
       <a><router-link to="/carte">Carte interactive</router-link></a>
@@ -39,6 +42,12 @@ nav a:hover{
 }
 nav a.router-link-exact-active {
   color: darkgreen;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 </style>
