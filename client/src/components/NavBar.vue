@@ -2,7 +2,7 @@
   <div id="navbar">
     <nav>
       <div class="logo">
-        <img src="../../public/logo.png" id="logo">
+        <img src="../../public/logo/logo.png" id="logo">
       </div>
       <a><router-link to="/">Accueil</router-link></a>
       <a><router-link to="/carte">Carte interactive</router-link></a>
@@ -29,12 +29,10 @@ nav {
 
 nav a {
   font-weight: bold;
+  font-family: Poppins, sans-serif;
+  font-size: 23px;
   color: #2c3e50;
   margin: 0 20px 0 20px;
-}
-
-.connexion{
-  color: red;
 }
 
 nav a:hover{
@@ -44,7 +42,8 @@ nav a.router-link-exact-active {
   color: darkgreen;
 }
 .logo {
-  display: flex;
+  margin-top: -35px;
+  position: absolute;
   justify-content: center;
   align-items: center;
   flex-direction: column;
