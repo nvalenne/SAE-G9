@@ -1,9 +1,9 @@
 <template>
   <div id="navbar">
-    <div class="logo">
-      <img src="../../public/logo.png" style="margin-bottom: 15px;width: 60px;">
-    </div>
     <nav>
+      <div class="logo">
+        <img src="../../public/logo.png" id="logo">
+      </div>
       <a><router-link to="/">Accueil</router-link></a>
       <a><router-link to="/carte">Carte interactive</router-link></a>
       <a><router-link to="/liste_manege">Liste des manèges</router-link></a>

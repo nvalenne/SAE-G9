@@ -33,6 +33,9 @@ export default {
     title: 'Connection'
   }
 }
+
+
+
 </script>
 <style scoped>
   #connexion, .headerConnexion, #formConnexion{
