@@ -24,9 +24,9 @@
         borderopacity="1.0"
         inkscape:pageopacity="0.0"
         inkscape:pageshadow="2"
-        inkscape:zoom="0.7"
-        inkscape:cx="695.9606"
-        inkscape:cy="309.48217"
+        inkscape:zoom="0.98994949"
+        inkscape:cx="706.57729"
+        inkscape:cy="390.29437"
         inkscape:document-units="px"
         inkscape:current-layer="layer1"
         showgrid="false"
@@ -42,7 +42,7 @@
           <cc:Work rdf:about="">
             <dc:format>image/svg+xml</dc:format>
             <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-            <dc:title></dc:title>
+            <dc:title />
           </cc:Work>
         </rdf:RDF>
       </metadata>
@@ -132,14 +132,14 @@
           style="
             fill: #ffffff;
             stroke: #000000;
-            stroke-width: 0.26458335;
+            stroke-width: 0.31430504;
             stroke-opacity: 1;
           "
           id="rect1235"
-          width="4.8108521"
-          height="28.597837"
-          x="48.643055"
-          y="155.07986"
+          width="4.761817"
+          height="40.77182"
+          x="48.667572"
+          y="155.10431"
         />
         <rect
           style="
@@ -249,14 +249,14 @@
           style="
             fill: #ffffff;
             stroke: #000000;
-            stroke-width: 0.37648842;
+            stroke-width: 0.437428;
             stroke-opacity: 1;
           "
           id="rect1255"
-          width="6.5473022"
-          height="95.057175"
-          x="322.1243"
-          y="155.10069"
+          width="6.4872065"
+          height="129.50887"
+          x="322.15436"
+          y="155.13066"
         />
         <g id="g1351" style="fill: #ffc022">
           <rect
@@ -795,49 +795,6 @@
             "
           />
         </g>
-        <flowRoot
-          xml:space="preserve"
-          id="flowRoot1089"
-          style="
-            font-style: normal;
-            font-weight: normal;
-            font-size: 40px;
-            line-height: 1.25;
-            font-family: sans-serif;
-            letter-spacing: 0px;
-            word-spacing: 0px;
-            fill: #000000;
-            fill-opacity: 1;
-            stroke: none;
-          "
-          transform="matrix(0.00665005,0.41258137,-0.26454898,0.00426404,256.9223,67.764417)"
-        >
-          <flowRegion id="flowRegion1091">
-            <rect
-              id="rect1093"
-              width="147.50478"
-              height="45.434402"
-              x="335.37064"
-              y="481.604"
-            />
-          </flowRegion>
-          <flowPara
-            id="flowPara1095"
-            style="
-              font-style: normal;
-              font-variant: normal;
-              font-weight: normal;
-              font-stretch: normal;
-              font-size: 21.35339737px;
-              font-family: 'Liberation Sans';
-              -inkscape-font-specification: 'Liberation Sans';
-              text-align: center;
-              text-anchor: middle;
-            "
-          >
-            ENTREE
-          </flowPara>
-        </flowRoot>
         <rect
           style="
             fill: #ff6600;
@@ -883,145 +840,6 @@
           height="30.454773"
           x="145.36794"
           y="176.18141"
-        />
-        <ellipse
-          ry="2.9906414"
-          rx="2.7360213"
-          cy="227.81859"
-          cx="135.1649"
-          id="ellipse1131"
-          style="
-            fill: #009100;
-            stroke: #000000;
-            stroke-width: 0.50959802;
-            stroke-linecap: butt;
-            stroke-miterlimit: 4;
-            stroke-dasharray: none;
-            stroke-opacity: 1;
-            paint-order: normal;
-          "
-        />
-        <ellipse
-          style="
-            fill: #009100;
-            stroke: #000000;
-            stroke-width: 0.50959802;
-            stroke-linecap: butt;
-            stroke-miterlimit: 4;
-            stroke-dasharray: none;
-            stroke-opacity: 1;
-            paint-order: normal;
-          "
-          id="ellipse1133"
-          cx="135.1649"
-          cy="211.64127"
-          rx="2.7360213"
-          ry="2.9906414"
-        />
-        <ellipse
-          ry="2.9906414"
-          rx="2.7360213"
-          cy="256.57828"
-          cx="134.81476"
-          id="ellipse1135"
-          style="
-            fill: #009100;
-            stroke: #000000;
-            stroke-width: 0.50959802;
-            stroke-linecap: butt;
-            stroke-miterlimit: 4;
-            stroke-dasharray: none;
-            stroke-opacity: 1;
-            paint-order: normal;
-          "
-        />
-        <ellipse
-          style="
-            fill: #009100;
-            stroke: #000000;
-            stroke-width: 0.50959802;
-            stroke-linecap: butt;
-            stroke-miterlimit: 4;
-            stroke-dasharray: none;
-            stroke-opacity: 1;
-            paint-order: normal;
-          "
-          id="ellipse1137"
-          cx="85.0952"
-          cy="188.6335"
-          rx="2.7360213"
-          ry="2.9906414"
-        />
-        <ellipse
-          ry="2.9906414"
-          rx="2.7360213"
-          cy="278.14804"
-          cx="6.664341"
-          id="ellipse1139"
-          style="
-            fill: #009100;
-            stroke: #000000;
-            stroke-width: 0.50959802;
-            stroke-linecap: butt;
-            stroke-miterlimit: 4;
-            stroke-dasharray: none;
-            stroke-opacity: 1;
-            paint-order: normal;
-          "
-        />
-        <ellipse
-          style="
-            fill: #009100;
-            stroke: #000000;
-            stroke-width: 0.50959802;
-            stroke-linecap: butt;
-            stroke-miterlimit: 4;
-            stroke-dasharray: none;
-            stroke-opacity: 1;
-            paint-order: normal;
-          "
-          id="ellipse1141"
-          cx="6.3142033"
-          cy="236.80598"
-          rx="2.7360213"
-          ry="2.9906414"
-          inkscape:transform-center-y="-1.511905"
-        />
-        <ellipse
-          inkscape:transform-center-y="16.630953"
-          ry="2.9906414"
-          rx="2.7360213"
-          cy="197.98039"
-          cx="6.664341"
-          id="ellipse1143"
-          style="
-            fill: #009100;
-            stroke: #000000;
-            stroke-width: 0.50959802;
-            stroke-linecap: butt;
-            stroke-miterlimit: 4;
-            stroke-dasharray: none;
-            stroke-opacity: 1;
-            paint-order: normal;
-          "
-        />
-        <ellipse
-          style="
-            fill: #009100;
-            stroke: #000000;
-            stroke-width: 0.50959802;
-            stroke-linecap: butt;
-            stroke-miterlimit: 4;
-            stroke-dasharray: none;
-            stroke-opacity: 1;
-            paint-order: normal;
-          "
-          id="ellipse1145"
-          cx="348.74893"
-          cy="123.20518"
-          rx="2.7360213"
-          ry="2.9906414"
-          inkscape:transform-center-y="16.630953"
         />
       </g>
       <rect

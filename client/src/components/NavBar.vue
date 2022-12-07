@@ -3,7 +3,9 @@
     <nav>
       <v-row>
         <div class="logo col-2">
-          <img src="../../public/logo/logo.png" id="logo" />
+          <router-link to="/">
+            <img src="../assets/logo_banner.png" id="logo" />
+          </router-link>
         </div>
         <div class="col-8 navbar">
           <router-link to="/">
@@ -23,11 +25,11 @@
             <span>Nous contacter</span>
           </router-link>
         </div>
-        <div class="col-2">
+        <div class="col-2 navbar">
           <router-link to="/connexion" class="connexion">
             <span class="accountIcon">
-              <v-icon color="white">mdi-account-circle</v-icon>
-              <span></span> <!--AFFICHER NOM DU COMPTE LORSQUE CONNEXION-->
+              <v-icon size="36" color="white">mdi-account-circle</v-icon>
+              <span>Se connecter</span> <!--AFFICHER NOM DU COMPTE LORSQUE CONNEXION-->
             </span>
           </router-link>
         </div>
@@ -60,20 +62,23 @@ nav a {
   margin: 0 30px 0 30px;
   text-decoration: none;
 }
+.navbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .navbar span {
   vertical-align: middle;
   margin-left: 10px;
 }
 
 nav a:hover {
-  color: #2db22d;
+  color: rgb(212, 128, 17);
 }
 nav a.router-link-exact-active {
-  color: darkgreen;
+  color: rgb(212, 128, 17);
 }
 #logo {
-  width: 30px;
-}
-.accountIcon {
+  width: 60%;
 }
 </style>

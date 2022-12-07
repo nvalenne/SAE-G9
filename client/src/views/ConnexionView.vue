@@ -4,7 +4,7 @@
     <div id="connexion">
       <div style="width:40%">
         <div class="headerConnexion" style="margin-bottom: 15px;">
-          <img src="../../public/logo/logo.png" style="width: 20%">
+          <img src="../assets/wheel.gif" style="width: 20%">
         </div>
         <div>
           <form id="formConnexion">
