@@ -5,7 +5,7 @@
         <v-img :src="require('../../public/manege/manege1.jpg')" class="image_principale">
         </v-img>
         <h1 class="titre_fete_foraine">Les Papiots</h1>
-        <h2 class="date">Du 1 juillet au 31 août à Belfort</h2>
+        <h2 class="date">Du 1 juillet au 13 juillet 2023 à Belfort</h2>
       </div>
     <div class="text">
       <p>La grande fête foraine de l’Ouest de la France, Les Papiots s’installe tous les ans pendant près d’un mois, de début décembre à début janvier, près du centre-ville
