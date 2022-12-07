@@ -13,9 +13,12 @@
             <v-icon color="white">mdi-map</v-icon>
             Carte interactive
           </router-link>
-          <router-link to="/liste_manege">Liste des manèges</router-link>
+          <router-link to="/liste_manege">
+            <v-icon color="white">mdi-view-list</v-icon>
+            Liste des manèges
+          </router-link>
           <router-link to="/contact">
-            <v-icon color="white">mdi-contact</v-icon>
+            <v-icon>mdi-support</v-icon>
             Nous contacter
           </router-link>
         </div>
