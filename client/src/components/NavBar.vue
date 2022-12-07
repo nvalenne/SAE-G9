@@ -2,12 +2,13 @@
   <div id="navbar">
     <nav>
       <v-row>
-        <div class="logo col-1">
+        <div class="logo col-2">
           <img src="../../public/logo/logo.png" id="logo" />
         </div>
         <div class="col-8">
           <router-link to="/">
             <v-icon color="white">mdi-home</v-icon>
+            Accueil
           </router-link>
           <router-link to="/carte">
             <v-icon color="white">mdi-map</v-icon>
@@ -22,7 +23,7 @@
             Nous contacter
           </router-link>
         </div>
-        <div class="col-3">
+        <div class="col-2">
           <router-link to="/connexion" class="connexion">
             <span class="accountIcon">
               <v-icon color="white">mdi-account-circle</v-icon>
