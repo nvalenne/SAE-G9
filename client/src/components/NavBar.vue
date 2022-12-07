@@ -21,7 +21,6 @@
             <span>Liste des manèges</span>
           </router-link>
           <router-link to="/contact">
-            <v-icon>mdi-support</v-icon>
             <span>Nous contacter</span>
           </router-link>
         </div>
@@ -29,7 +28,8 @@
           <router-link to="/connexion" class="connexion">
             <span class="accountIcon">
               <v-icon size="36" color="white">mdi-account-circle</v-icon>
-              <span>Se connecter</span> <!--AFFICHER NOM DU COMPTE LORSQUE CONNEXION-->
+              <span>Se connecter</span>
+              <!--AFFICHER NOM DU COMPTE LORSQUE CONNEXION-->
             </span>
           </router-link>
         </div>
@@ -62,7 +62,7 @@ nav a {
   margin: 0 30px 0 30px;
   text-decoration: none;
 }
-.navbar{
+.navbar {
   display: flex;
   justify-content: center;
   align-items: center;

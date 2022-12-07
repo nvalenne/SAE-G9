@@ -1,6 +1,6 @@
 <template>
     <div id="map">
-        <SVGMap/>
+        <SVGMap/>        
     </div>
 </template>
 <script>
@@ -15,8 +15,7 @@ export default {
 <style scoped>
 #map {
   display: flex;
-  justify-content: center;
-  align-content: center;
+  justify-content:left;
   margin-top: 10px;
 }
 </style>

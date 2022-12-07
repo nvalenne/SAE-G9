@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <NavBar/>
     <div id="connexion">
       <div style="width:40%">
         <div class="headerConnexion" style="margin-bottom: 15px;">
@@ -22,13 +21,8 @@
 
 <script>
 
-import NavBar from "@/components/NavBar";
 export default {
   name: 'ConnectionView',
-  components: {
-    NavBar
-
-  },
   metaInfo: {
     title: 'Connection'
   }

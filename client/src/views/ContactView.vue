@@ -1,21 +1,41 @@
 <template>
   <div class="accueil">
-    <NavBar/>
-    <h1>Nous contacter</h1>
+    <div class="contactContent">
+      <v-card elevation="12" style="width: 60%;padding: 60px;">
+        <v-card-title>Un problème ?</v-card-title>
+        <v-card-text>
+          Vous pouvez nous contacter en remplissant le formulaire ci-dessous.
+          Votre demande sera traitée sera dans les plus brefs délais.
+        </v-card-text>
+        <div>
+          <v-form class="contactForm" action="#">
+            <v-text-field label="Adresse mail" required></v-text-field>
+            <v-text-field label="Nom" required></v-text-field>
+            <v-text-field label="Prénom" required></v-text-field>
+            <v-textarea label="Message" required></v-textarea>
+            <v-btn color="success" type="submit">Envoyer</v-btn>
+          </v-form>
+        </div>
+      </v-card>
+    </div>
   </div>
 </template>
 
 <script>
-
-import NavBar from "@/components/NavBar";
 export default {
-  name: 'ContactView',
-  components: {
-    NavBar
-
-  },
+  name: "ContactView",
   metaInfo: {
-    title: 'Nous contacter'
-  }
-}
+    title: "Nous contacter",
+  },
+};
 </script>
+
+<style scoped>
+.contactContent, .contactForm {
+  display: flex;
+  justify-content: center;
+}
+.contactForm {
+  flex-direction: column;
+}
+</style>
