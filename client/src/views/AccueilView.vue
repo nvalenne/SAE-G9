@@ -8,8 +8,8 @@
         <h2 class="date">Du 1 juillet au 31 août à Belfort</h2>
       </div>
     <div class="text">
-      <p>La grande fête foraine de l’Ouest de la France, les papiots s’installe tous les ans pendant près d’un mois, de début décembre à début janvier, près du centre-ville
-        de Belfort. À cette occasion, un peu plus de 80 forains en tous genres (manèges, jeux, boutiques, stands de nourriture) sont présent lors de cette
+      <p>La grande fête foraine de l’Ouest de la France, Les Papiots s’installe tous les ans pendant près d’un mois, de début décembre à début janvier, près du centre-ville
+        de Belfort. À cette occasion, un peu plus de 80 forains en tous genres (manèges, jeux, boutiques, stands de nourriture) sont présents lors de cette
         grande.</p>
       <hr>
     </div>
