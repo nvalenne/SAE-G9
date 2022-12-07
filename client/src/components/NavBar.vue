@@ -5,22 +5,22 @@
         <div class="logo col-2">
           <img src="../../public/logo/logo.png" id="logo" />
         </div>
-        <div class="col-8">
+        <div class="col-8 navbar">
           <router-link to="/">
             <v-icon color="white">mdi-home</v-icon>
-            Accueil
+            <span>Accueil</span>
           </router-link>
           <router-link to="/carte">
             <v-icon color="white">mdi-map</v-icon>
-            Carte interactive
+            <span>Carte interactive</span>
           </router-link>
           <router-link to="/liste_manege">
             <v-icon color="white">mdi-view-list</v-icon>
-            Liste des manèges
+            <span>Liste des manèges</span>
           </router-link>
           <router-link to="/contact">
             <v-icon>mdi-support</v-icon>
-            Nous contacter
+            <span>Nous contacter</span>
           </router-link>
         </div>
         <div class="col-2">
@@ -46,7 +46,10 @@ export default {
 nav {
   text-align: center;
   padding: 10px;
-  background-color: rgb(29, 27, 27);
+  background-color: rgb(29, 28, 27);
+}
+nav text {
+  text-align: center;
 }
 
 nav a {
@@ -56,6 +59,10 @@ nav a {
   color: #ffffff;
   margin: 0 30px 0 30px;
   text-decoration: none;
+}
+.navbar span {
+  vertical-align: middle;
+  margin-left: 10px;
 }
 
 nav a:hover {
