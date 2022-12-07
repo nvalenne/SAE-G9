@@ -1,11 +1,15 @@
 <template>
     <div id="map">
-        <img src="../assets/dessin.svg" width="100%">
+        <SVGMap/>
     </div>
 </template>
 <script>
+import SVGMap from './SVGMap.vue';
 export default {
-    name: "MapVue"
+    name: "MapVue",
+    components: {
+        SVGMap
+    }
 }
 </script>
 <style scoped>
