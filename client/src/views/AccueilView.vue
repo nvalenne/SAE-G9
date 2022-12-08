@@ -40,7 +40,6 @@
             v-for="(sponsor, index) in imagesSponsors"
             :key="index"
           >
-            <br><br><br><br>
             <v-card align="center">
               <v-img class="sponsor" :src="sponsor.src"></v-img>
             </v-card>
@@ -71,7 +70,10 @@ export default {
       { src: require("../../public/logo/sponsors/letudiant.png") },
       { src: require("../../public/logo/sponsors/societe-generale-logo.png") },
       { src: require("../../public/logo/sponsors/LEstRepublicain.png") },
-      { src: require("../../public/logo/sponsors/IUTBM_quadri.jpg")}
+      { src: require("../../public/logo/sponsors/IUTBM_quadri.jpg")},
+      { src: require("../../public/logo/sponsors/J'aime_lire.png")},
+      {src: require("../../public/logo/sponsors/Logo-Cristalline.jpg")},
+      {src : require("../../public/logo/sponsors/Logo_Carrefour.png")}
     ],
   }),
 };
