@@ -42,14 +42,36 @@
 <script>
 export default {
   name: "NavBar",
+  data () {
+    return {
+      view: {
+        topOfPage: true
+      }
+    }
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll(){
+      if(window.pageYOffset>0){
+        if(this.view.topOfPage) this.view.topOfPage = false
+      } else {
+        if(!this.view.topOfPage) this.view.topOfPage = true
+      }
+    }
+  },
 };
 </script>
 
 <style scoped>
 nav {
+  position: fixed;
+  display: flex;
   text-align: center;
   padding: 10px;
   background-color: rgb(29, 28, 27);
+  transition: all .2s ease-in-out;
 }
 nav text {
   text-align: center;
