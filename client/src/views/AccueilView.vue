@@ -56,7 +56,7 @@ export default {
   name: "AccueilView",
 
   metaInfo: {
-    title: "Accueil",
+    title: "Accueil - Les Papiots",
   },
   data: () => ({
     imagesManeges: [

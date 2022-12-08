@@ -15,7 +15,7 @@ export default {
 
   },
   metaInfo: {
-    title: 'Carte intéractive'
+    title: 'Carte interactive - Les Papiots'
   }
 }
 </script>

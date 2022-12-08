@@ -2,7 +2,7 @@
 export default {
   name: 'ListeManegeView',
   metaInfo: {
-    title: 'Liste manèges'
+    title: 'Liste des manèges - Les Papiots'
   }
 }
 </script>

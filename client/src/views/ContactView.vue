@@ -1,7 +1,7 @@
 <template>
   <div class="accueil">
     <div class="contactContent">
-      <v-card elevation="12" style="width: 60%;padding: 60px;">
+      <v-card elevation="8" style="width: 60%;padding: 60px;border-radius: 30px;">
         <v-card-title>Un problème ?</v-card-title>
         <v-card-text>
           Vous pouvez nous contacter en remplissant le formulaire ci-dessous.
@@ -25,7 +25,7 @@
 export default {
   name: "ContactView",
   metaInfo: {
-    title: "Nous contacter",
+    title: "Nous contacter - Les Papiots",
   },
 };
 </script>
