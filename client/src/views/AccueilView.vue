@@ -40,6 +40,7 @@
             v-for="(sponsor, index) in imagesSponsors"
             :key="index"
           >
+            <br><br><br><br>
             <v-card align="center">
               <v-img class="sponsor" :src="sponsor.src"></v-img>
             </v-card>
@@ -69,8 +70,8 @@ export default {
       { src: require("../../public/logo/sponsors/france-3-bourgogne-franche-comte-logo.jpg") },
       { src: require("../../public/logo/sponsors/letudiant.png") },
       { src: require("../../public/logo/sponsors/societe-generale-logo.png") },
-      { src: require("../../public/logo/sponsors/Logo_Est_Republicain.svg") },
-      { src: require("../../public/logo/sponsors/iutbm.svg")}
+      { src: require("../../public/logo/sponsors/LEstRepublicain.png") },
+      { src: require("../../public/logo/sponsors/IUTBM_quadri.jpg")}
     ],
   }),
 };
