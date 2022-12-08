@@ -2,6 +2,7 @@
   <div id="app">
     <div id="connexion">
       <div style="width:40%">
+        <br>
         <v-card elevation="4" class="cardConnexion">
           <div class="headerConnexion" style="margin-bottom: 15px;">
             <img src="../assets/wheel.gif" style="width: 20%">
@@ -18,6 +19,7 @@
         </v-card>
       </div>
       <div>
+        <br>
         <span>Vous n'avez pas de compte ? Cliquez <router-link to="/inscription">ici</router-link> pour vous le créer</span>
       </div>
     </div>
