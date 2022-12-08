@@ -5,6 +5,7 @@ import CarteView from "../views/CarteView";
 import ContactView from "../views/ContactView";
 import ListeManegeView from "../views/ListeManegeView";
 import ConnexionView from "@/views/ConnexionView";
+import InscriptionView from "@/views/InscriptionView";
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/connexion',
     name: 'connexionView',
     component: ConnexionView
+  },
+  {
+    path: '/inscription',
+    name: 'inscriptionView',
+    component: InscriptionView
   }
 ]
 
