@@ -21,6 +21,7 @@
             <span>Liste des manèges</span>
           </router-link>
           <router-link to="/contact">
+            <v-icon size="24" color="white">mdi-email</v-icon>
             <span>Nous contacter</span>
           </router-link>
         </div>
