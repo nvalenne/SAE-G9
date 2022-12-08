@@ -4,7 +4,7 @@
       <v-row>
         <div class="logo col-2">
           <router-link to="/">
-            <img src="../assets/logo_banner.png" id="logo" />
+            <img src="../../assets/logo_banner.png" id="logo" />
           </router-link>
         </div>
         <div class="col-8 navbar">

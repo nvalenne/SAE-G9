@@ -31,10 +31,12 @@ export default {
 </script>
 
 <style scoped>
-.contactContent, .contactForm {
+.contactContent,
+.contactForm {
   display: flex;
   justify-content: center;
 }
+
 .contactForm {
   flex-direction: column;
 }
