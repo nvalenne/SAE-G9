@@ -1,4 +1,4 @@
-
+const bcrypt = require('bcrypt');
 
 class CompteRepository{
 
@@ -13,8 +13,8 @@ class CompteRepository{
                          mdp VARCHAR(50),
                          mail VARCHAR(50),
                          nom VARCHAR(50),
-                         role VARCHAR(50),
                          prenom VARCHAR(50),
+                         role VARCHAR(50),
                          PRIMARY KEY(idCompte)
                          );`;
         return this.dao.run(sql, "COMPTE tables OK");
@@ -26,6 +26,22 @@ class CompteRepository{
         //Scipt SQL ?
 
 
+    }
+
+    async addCompte(identifiant, mdp, mail, nom, prenom){
+        let sql;
+        let params;
+        bcrypt.hash(mdp, 10, (err) => {
+            if (err) {
+                return err;
+            }
+            let params = [identifiant, mdp, mail, nom, prenom]
+            let sql = `INSERT INTO Compte
+                       VALUES (null, $1, $2, $3, $4, $5, 'user')`
+
+        })
+        let rows = await this.dao.get(sql, params);
+        return rows;
     }
 
     async countCompte(){
