@@ -59,6 +59,7 @@
 export default {
   name: "NavBar",
   data: () => ({
+    isOpen : false
   })
 };
 </script>
