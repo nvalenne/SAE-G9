@@ -1,5 +1,6 @@
 const mainService = require("../services/main_service");
-
+let attractionRepo = require("../repository/AttractionRepository");
+let repo = new attractionRepo()
 
 exports.test = (req,res) =>{
     mainService.test((error,results)=>{ // modifier nom fonction
@@ -99,4 +100,18 @@ exports.save_data= (req,res)=>{
         });
     });
     res.render("")   //modifier nom fonction
+}
+
+exports.getAttractions= (req,res)=>{
+    let service = require("../services/attraction.service.js")
+    service.getAllAttractions((error, results) => {
+        if (error) {
+            console.log(error);
+            return res.status(400).send({ success: 0, data: error });
+        }
+        return res.status(200).send({
+            success: 1,
+            data: results,
+        });
+    })
 }

@@ -28,8 +28,13 @@ class AttractionRepository{
 
     async initTable(){
 
-        //Scipt SQL ?
-
+        let sql = 'INSERT INTO ATTRACTION (nom, prixAdulte, prixEnfant, tailleRequise, recette, nbrClientsTotal, attente, idTypeAttraction, idCompte) VALUES\n' +
+            '(\'dégueulator\',10,8,1.3,0,0,0,7,3),\n' +
+            '(\'space mountains\',10,8,1.3,0.,0,0,1,3),\n' +
+            '(\'rapide et furieux\',10,8,1.3,0,0,0,1,4),\n' +
+            '(\'splash\',10,8,1.3,0,0,0,3,5),\n' +
+            '(\'Spaceglider\',10,8,1.3,0,0,0,6,6);'
+        return this.dao.run(sql,'inserts');
 
     }
 
@@ -40,7 +45,7 @@ class AttractionRepository{
     }
 
     async getAllAttraction(){
-        let sql = `SELECT * FROM ATTRACTION`;
+        let sql = `SELECT * FROM attraction`;
         return await this.dao.all(sql);
     }
 
