@@ -20,7 +20,8 @@
       </div>
       <div>
         <br>
-        <span>Vous n'avez pas de compte ? Cliquez <router-link to="/inscription">ici</router-link> pour vous le créer</span>
+        <span>Vous n'avez pas de compte ? Cliquez <router-link to="/inscription">ici</router-link> pour vous le
+          créer</span>
       </div>
     </div>
   </div>
@@ -48,7 +49,8 @@ export default {
   align-items: center;
   flex-direction: column;
 }
-.cardConnexion{
+
+.cardConnexion {
   border-radius: 40px;
   padding: 10px 0 20px 0;
 }

@@ -4,7 +4,7 @@
       <v-row>
         <div class="logo col-2">
           <router-link to="/">
-            <img src="../assets/logo_banner.png" id="logo" />
+            <img src="../../assets/logo_banner.png" id="logo" />
           </router-link>
         </div>
         <div class="col-8 navbar">
@@ -16,10 +16,26 @@
             <v-icon color="white">mdi-map</v-icon>
             <span>Carte interactive</span>
           </router-link>
-          <router-link to="/liste_manege">
-            <v-icon color="white">mdi-view-list</v-icon>
-            <span>Liste des manèges</span>
-          </router-link>
+          <div @click="(isOpen = !isOpen)">
+            <a href="#">
+              <v-icon color="white">mdi-view-list</v-icon>
+              <span>Listes </span>
+              <svg viewBox="0 0 1030 638" width="10">
+                <path d="M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z"
+                  fill="#FFF"></path>
+              </svg>
+            </a>
+            <transition name="fade" apear>
+              <div class="sub-menu" v-if="isOpen">
+                <div class="menu-item">
+                  <router-link to="/liste_manege">Liste des manèges</router-link>
+                </div>
+                <div class="menu-item">
+                  <router-link to="/liste_prestataire">Liste des prestataires</router-link>
+                </div>
+              </div>
+            </transition>
+          </div>
           <router-link to="/contact">
             <v-icon size="24" color="white">mdi-email</v-icon>
             <span>Nous contacter</span>
@@ -42,6 +58,8 @@
 <script>
 export default {
   name: "NavBar",
+  data: () => ({
+  })
 };
 </script>
 
@@ -51,6 +69,7 @@ nav {
   padding: 10px;
   background-color: rgb(29, 28, 27);
 }
+
 nav text {
   text-align: center;
 }
@@ -63,11 +82,13 @@ nav a {
   margin: 0 30px 0 30px;
   text-decoration: none;
 }
+
 .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .navbar span {
   vertical-align: middle;
   margin-left: 10px;
@@ -76,9 +97,11 @@ nav a {
 nav a:hover {
   color: rgb(212, 128, 17);
 }
+
 nav a.router-link-exact-active {
   color: rgb(212, 128, 17);
 }
+
 #logo {
   width: 60%;
 }

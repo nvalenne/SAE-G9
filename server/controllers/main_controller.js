@@ -41,7 +41,7 @@ exports.page_connexion = (req,res)=>{
             data: results,
         });
     });
-    res.render(" connexioon");  //modifier nom fonction
+    res.render(" connexion");  //modifier nom fonction
 }
 
 exports.carte_interactive = (req,res)=>{

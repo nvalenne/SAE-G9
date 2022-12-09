@@ -20,7 +20,8 @@
         </v-card>
       </div>
       <div>
-        <span>Vous avez déjà un compte ? Cliquez <router-link to="/connexion">ici</router-link> pour vous connecter</span>
+        <span>Vous avez déjà un compte ? Cliquez <router-link to="/connexion">ici</router-link> pour vous
+          connecter</span>
       </div>
     </div>
   </div>
@@ -29,24 +30,25 @@
 
 <script>
 export default {
-    name: 'InscriptionView',
-    metaInfo: {
-      title: 'Inscription - Les Papiots'
-    }
+  name: 'InscriptionView',
+  metaInfo: {
+    title: 'Inscription - Les Papiots'
+  }
 }
 </script>
 
 <style scoped>
 #inscription,
 .headerInscription,
-#formInscription{
+#formInscription {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.cardInscription{
+
+.cardInscription {
   border-radius: 40px;
   padding: 10px 0 20px 0;
 }

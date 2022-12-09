@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import AccueilView from '../views/AccueilView.vue'
-import CarteView from "../views/CarteView";
-import ContactView from "../views/ContactView";
-import ListeManegeView from "../views/ListeManegeView";
+import AccueilView from '@/views/AccueilView.vue'
+import CarteView from "@/views/CarteView";
+import ContactView from "@/views/ContactView";
+import ListeManegeView from "@/views/ListeManegeView";
+import ListePrestataireView from "@/views/ListePrestataireView";
 import ConnexionView from "@/views/ConnexionView";
 import InscriptionView from "@/views/InscriptionView";
 
@@ -29,6 +30,11 @@ const routes = [
     path: '/liste_manege',
     name: 'ListeManegeView',
     component: ListeManegeView
+  },
+  {
+    path: '/liste_prestataire',
+    name: 'ListePrestataireView',
+    component: ListePrestataireView
   },
   {
     path: '/connexion',
