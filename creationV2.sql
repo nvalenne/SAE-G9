@@ -13,20 +13,20 @@ DROP TABLE IF EXISTS TYPESTAND;
 DROP TABLE IF EXISTS EMPLACEMENT;
 
 CREATE TABLE EMPLACEMENT(
-   idEmplacement INT NOT NULL AUTO_INCREMENT,
+   idEmplacement SERIAL,
    prix DECIMAL(6,2),
    taille DECIMAL(6,2),
    PRIMARY KEY(idEmplacement)
 );
 
 CREATE TABLE TYPESTAND(
-   idTypeStand INT NOT NULL AUTO_INCREMENT,
+   idTypeStand SERIAL,
    designation VARCHAR(50),
    PRIMARY KEY(idTypeStand)
 );
 
 CREATE TABLE TYPEATTRACTION(
-   idTypeAttraction INT NOT NULL AUTO_INCREMENT,
+   idTypeAttraction SERIAL,
    designation VARCHAR(50),
    PRIMARY KEY(idTypeAttraction)
 );

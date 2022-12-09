@@ -68,6 +68,10 @@ class Parser{
 
     }
 
+    async initTables(){
+        await this.attraction.initTable();
+    }
+
 }
 
 module.exports = Parser;

@@ -1,6 +1,7 @@
-import express from 'express'
-import main_Controller from '../controllers/main_controller'
+const express = require('express');
+const main_Controller = require('../controllers/main_controller');
 let router = express.Router();
+
 
 
 // pages pour le public
@@ -17,4 +18,8 @@ router.post("/:id/infos", main_Controller.save_data);
 
 //test
 router.get("/test",main_Controller.test);
+
+router.get("/attractions",main_Controller.getAttractions);
+
+module.exports= router;
 
