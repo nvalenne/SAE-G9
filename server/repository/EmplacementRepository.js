@@ -19,8 +19,11 @@ class EmplacementRepository{
 
     async initTable(){
 
-        //Scipt SQL ?
-
+        let sql = 'INSERT INTO EMPLACEMENT (prix, taille) VALUES\n' +
+            '(10,100),\n' +
+            '(10,100),\n' +
+            '(10,100);'
+        return this.dao.run(sql,'inserts');
 
     }
 

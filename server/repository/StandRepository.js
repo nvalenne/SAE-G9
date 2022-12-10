@@ -26,7 +26,13 @@ class StandRepository{
 
     async initTable(){
 
-        //Scipt SQL ?
+        let sql = 'INSERT INTO STAND (nom, prix, recette, nbrClientsTotal, attente, idTypeStand, idCompte) VALUES\n' +
+            '(\'canards\',10,0,0,0,1,3),\n' +
+            '(\'carabine\',10,0,0,0,1,3),\n' +
+            '(\'basket\',10,0,0,0,1,4),\n' +
+            '(\'I\',0,0,0,0,2,4);'
+        return this.dao.run(sql,'inserts');
+
     }
 
     async countStand(){

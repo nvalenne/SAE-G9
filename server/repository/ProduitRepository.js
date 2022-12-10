@@ -18,8 +18,10 @@ class ProduitRepository{
 
     async initTable(){
 
-        //Scipt SQL ?
-
+        let sql = 'INSERT INTO PRODUIT (nomProduit) VALUES\n' +
+            '(\'churros\'),\n' +
+            '(\'barbe a papa\');'
+        return this.dao.run(sql,'inserts');
 
     }
 

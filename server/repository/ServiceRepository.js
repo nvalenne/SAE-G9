@@ -18,8 +18,14 @@ class ServiceRepository{
 
     async initTable(){
 
-        //Scipt SQL ?
-
+        let sql = 'INSERT INTO SERVICE (nomService) VALUES\n' +
+            '(\'prix à gagner\'),\n' +
+            '(\'vente de nourriture\'),\n' +
+            '(\'vente de goodies\'),\n' +
+            '(\'consigne\'),\n' +
+            '(\'cadeaux à gagner\'),\n' +
+            '(\'accès mobilité réduite\');'
+        return this.dao.run(sql,'inserts');
 
     }
 

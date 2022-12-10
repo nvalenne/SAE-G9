@@ -69,7 +69,15 @@ class Parser{
     }
 
     async initTables(){
+        await this.emplacement.initTable();
+        await this.typeStand.initTable();
+        await this.typeAttraction.initTable();
+        await this.compte.initTable();
+        await this.service.initTable();
+        await this.produit.initTable();
         await this.attraction.initTable();
+        await this.stand.initTable();
+        await this.menu.initTable();
     }
 
 }

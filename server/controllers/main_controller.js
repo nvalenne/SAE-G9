@@ -1,4 +1,3 @@
-const mainService = require("../services/main_service");
 let attractionRepo = require("../repository/AttractionRepository");
 let repo = new attractionRepo()
 

@@ -20,8 +20,10 @@ class MenuRepository{
 
     async initTable(){
 
-        //Scipt SQL ?
-
+        let sql = 'INSERT INTO MENU(idStand,idProduit) VALUES\n' +
+            '(4,1),\n' +
+            '(4,2);'
+        return this.dao.run(sql,'inserts');
 
     }
 

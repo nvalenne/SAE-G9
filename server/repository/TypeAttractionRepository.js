@@ -18,7 +18,18 @@ class TypeAttractionRepository{
 
     async initTable(){
 
-        //Scipt SQL ?
+        let sql = 'INSERT INTO TYPEATTRACTION (designation) VALUES\n' +
+            '(\'grand huit\'),\n' +
+            '(\'auto-tamponneuses\'),\n' +
+            '(\'rivière canadienne\'),\n' +
+            '(\'grande roue\'),\n' +
+            '(\'maison hantée\'),\n' +
+            '(\'maison des pièges\'),\n' +
+            '(\'centrigugeuse\'),\n' +
+            '(\'tour infernale\'),\n' +
+            '(\'reverse bungee\'),\n' +
+            '(\'bulles sur eau\');'
+        return this.dao.run(sql,'inserts');
 
     }
 

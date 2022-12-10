@@ -23,8 +23,14 @@ class CompteRepository{
 
     async initTable(){
 
-        //Scipt SQL ?
-
+        let sql = 'INSERT INTO Compte (identifiant, mdp, mail, nom, role, prenom) VALUES\n' +
+            '(\'admin1\',\'1234\',\'admin1@gmail.com\',\'Jean\',\'admin\',\'Michel\'),\n' +
+            '(\'admin2\',\'abcd\',\'admin2@gmail.com\',\'Philippe\',\'admin\',\'Martin\'),\n' +
+            '(\'prestataire1\',\'1234\',\'prestataire1@gmail.com\',\'Jacques\',\'prestataire\',\'Max\'),\n' +
+            '(\'prestataire2\',\'abcd\',\'prestataire2@gmail.com\',\'Elizabeth\',\'prestataire\',\'Carl\'),\n' +
+            '(\'prestataire3\',\'1234\',\'prestataire3@gmail.com\',\'Ryan\',\'prestataire\',\'Poupou\'),\n' +
+            '(\'prestataire4\',\'abcd\',\'prestataire4@gmail.com\',\'Steven\',\'prestataire\',\'I\');\n'
+        return this.dao.run(sql,'inserts');
 
     }
 

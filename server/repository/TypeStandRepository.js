@@ -18,8 +18,10 @@ class TypeStandRepository{
 
     async initTable(){
 
-        //Scipt SQL ?
-
+        let sql = 'INSERT INTO TYPESTAND (designation) VALUES\n' +
+            '(\'pêche aux canards\'),\n' +
+            '(\'manger\');'
+        return this.dao.run(sql,'inserts');
 
     }
 
