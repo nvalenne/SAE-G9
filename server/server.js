@@ -1,31 +1,31 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const routes = require("./routers/main_router");
-
+import express from "express";
+import dotenv from "dotenv";
 dotenv.config();
 
+// Routers
+import prestataire_router from "./routers/prestataire.router.js";
+import attraction_router from "./routers/attraction.router.js";
+//
+
+
 //BDD
-const AppDao = require("./dao");
-const Parser = require("./repository/parser");
-
-global.dao = new AppDao();
-global.parser = new Parser(dao);
-
+import db from "./models/index.js";
 //
 
 const port = process.env.PORT;
 const app = express();
 
-app.use("/", routes);
+app.use("/prestataires", prestataire_router);
+app.use("/attractions", attraction_router);
 
 
+try {
+    await db.sequelize.authenticate()
+}catch (e) {
+    console.error(e);
+}
 app.listen(port, () => {
     console.log(`Listening on port ${port}` );
-    parser.dropTable().then(()=>{
-        parser.createTable().then(()=>{
-            parser.initTables();
-            console.log("ALL TABLES OK");
-        })
-    });
+    db.sequelize.sync().then(r => console.log("yeah"));
 
 });
