@@ -5,6 +5,10 @@ export const Compte = (sequelize) => {
             id: {
                 field: 'id_compte',
                 type: DataType.INTEGER,
+                autoIncrement: true,
+                validate:{
+                    isNull: false
+                },
                 primaryKey: true
             },
             username: {
@@ -18,6 +22,9 @@ export const Compte = (sequelize) => {
             mail: {
                 field: 'mail',
                 type: DataType.STRING,
+                validate:{
+                    isEmail: true
+                },
             },
             nom: {
                 field: 'nom',

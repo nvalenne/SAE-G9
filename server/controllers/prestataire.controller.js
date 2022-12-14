@@ -4,8 +4,9 @@ export const getPrestataires = (req, res) =>{
     getAllPrestataires((error, result) => {
         if (error) {
             console.error(error);
+            res.status(400).send({success:1, content: error})
         } else {
-            res.send(JSON.stringify(result))
+            res.status(200).send(JSON.stringify(result))
         }
     }).then(r => console.log(r));
 }
@@ -14,8 +15,9 @@ export const getPrestataireByID = (req, res) =>{
     getByID(id, (error, result) => {
         if (error) {
             console.error(error);
+            res.status(400).send({success:1, content: error})
         } else {
-            res.send(JSON.stringify(result))
+            res.status(200).send(JSON.stringify(result))
         }
     }).then(r => console.log(r));
 }

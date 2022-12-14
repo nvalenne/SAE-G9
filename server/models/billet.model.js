@@ -4,6 +4,7 @@ export const Billet = (sequelize) => {
         id:{
             field:'id_billet',
             type: DataType.INTEGER,
+            autoIncrement: true,
             primaryKey: true
         },
         dateBillet: {
