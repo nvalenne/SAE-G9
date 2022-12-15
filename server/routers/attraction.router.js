@@ -1,5 +1,5 @@
 import express from "express";
-import {getAttractionByID, getAttractions} from "../controllers/attraction.controller.js";
+import {getAttractions,getAttractionByID} from "../controllers/attraction.controller.js";
 let attraction_router = express.Router();
 
 attraction_router.get("/", getAttractions);

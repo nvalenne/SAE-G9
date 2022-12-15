@@ -3,7 +3,7 @@ import DataType from "sequelize";
 export const Attraction = (sequelize) => {
     return sequelize.define('attraction', {
             id: {
-                field: 'idattraction',
+                field: 'id_attraction',
                 type: DataType.INTEGER,
                 primaryKey: true
             },
@@ -12,15 +12,15 @@ export const Attraction = (sequelize) => {
                 type: DataType.STRING,
             },
             prixAdulte: {
-                field: 'prixadulte',
+                field: 'prix_adulte',
                 type: DataType.DECIMAL(5,2),
             },
             prixEnfant: {
-                field: 'prixenfant',
+                field: 'prix_enfant',
                 type: DataType.DECIMAL(5,2),
             },
             tailleReq: {
-                field: 'taillerequise',
+                field: 'taille_requise',
                 type: DataType.DECIMAL(3,2),
             },
             recette: {
@@ -28,7 +28,7 @@ export const Attraction = (sequelize) => {
                 type: DataType.DECIMAL(6,2),
             },
             nbrClients: {
-                field: 'nbrclientstotal',
+                field: 'nbr_clients_total',
                 type: DataType.INTEGER,
             },
             attente: {

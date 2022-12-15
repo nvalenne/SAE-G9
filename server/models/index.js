@@ -38,20 +38,20 @@ db.billet = Billet(sequelize);
 
 
 // Relation entre attraction et compte
-db.compte.hasMany(db.attraction,{foreignKey:'idCompte'});
-db.attraction.belongsTo(db.compte, {foreignKey:'idCompte'});
+db.compte.hasMany(db.attraction,{foreignKey:'id_compte'});
+db.attraction.belongsTo(db.compte, {foreignKey:'id_compte'});
 
 //Relation entre attraction et typeAttraction
-db.type_attraction.hasMany(db.attraction, {foreignKey: 'idtypeattraction'})
-db.attraction.belongsTo(db.type_attraction, {foreignKey:'idtypeattraction'})
+db.type_attraction.hasMany(db.attraction, {foreignKey: 'id_type_attraction'})
+db.attraction.belongsTo(db.type_attraction, {foreignKey:'id_type_attraction'})
 
 //Relation entre stand et typeStand
-db.type_stand.hasMany(db.stand, {foreignKey:'idtypestand'});
-db.stand.belongsTo(db.type_stand, {foreignKey:'idtypestand'});
+db.type_stand.hasMany(db.stand, {foreignKey:'id_type_stand'});
+db.stand.belongsTo(db.type_stand, {foreignKey:'id_type_stand'});
 
 //Relation entre stand et compte
-db.compte.hasMany(db.stand, {foreignKey:'idCompte'});
-db.stand.belongsTo(db.compte, {foreignKey:'idCompte'});
+db.compte.hasMany(db.stand, {foreignKey:'id_compte'});
+db.stand.belongsTo(db.compte, {foreignKey:'id_compte'});
 
 // Relation entre Compte et Billet
 db.billet.belongsTo(db.compte, {foreignKey: 'id_compte'});
