@@ -2,8 +2,8 @@ import DataType from "sequelize";
 
 export const TypeStand = (sequelize) => {
     return sequelize.define('type_stand', {
-            id: {
-                field: 'idtypestand',
+            id_type_stand: {
+                field: 'id_type_stand',
                 type: DataType.INTEGER,
                 primaryKey: true
             },

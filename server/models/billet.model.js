@@ -1,7 +1,7 @@
 import DataType from "sequelize";
 export const Billet = (sequelize) => {
     return sequelize.define('billet', {
-        id:{
+        id_billet:{
             field:'id_billet',
             type: DataType.INTEGER,
             autoIncrement: true,

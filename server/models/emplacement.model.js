@@ -1,8 +1,8 @@
 import DataType from "sequelize";
 export const Emplacement = (sequelize) => {
     return sequelize.define('emplacement', {
-        id: {
-            field: 'idemplacement',
+        id_emplacement: {
+            field: 'id_emplacement',
             type: DataType.INTEGER,
             primaryKey: true
         },
@@ -12,9 +12,8 @@ export const Emplacement = (sequelize) => {
         },
         taille: {
             field: 'taille',
-            type: DataType.DECIMAL(5,2),
-        },
-
+            type: DataType.DECIMAL(6,2),
+        }
     }, {
         tableName: "emplacement",
         timestamps: false

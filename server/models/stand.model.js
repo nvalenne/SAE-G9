@@ -2,8 +2,8 @@ import DataType from "sequelize";
 
 export const Stand = (sequelize) => {
     return sequelize.define('stand', {
-            id: {
-                field: 'idstand',
+            id_stand: {
+                field: 'id_stand',
                 type: DataType.INTEGER,
                 primaryKey: true
             },
@@ -19,8 +19,8 @@ export const Stand = (sequelize) => {
                 field: 'recette',
                 type: DataType.STRING,
             },
-            nbrClients: {
-                field: 'nbrclientstotal',
+            nbr_clients_total: {
+                field: 'nbr_clients_total',
                 type: DataType.CHAR(50),
             },
             attente: {

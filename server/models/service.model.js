@@ -2,13 +2,13 @@ import DataType from "sequelize";
 
 export const Service = (sequelize) => {
     return sequelize.define('service', {
-            id: {
-                field: 'idservice',
+            id_service: {
+                field: 'id_service',
                 type: DataType.INTEGER,
                 primaryKey: true
             },
-            username: {
-                field: 'nomservice',
+            nom_service: {
+                field: 'nom_service',
                 type: DataType.CHAR(50),
             }
         }, {

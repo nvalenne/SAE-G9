@@ -2,13 +2,13 @@ import DataType from "sequelize";
 
 export const Produit = (sequelize) => {
     return sequelize.define('produit', {
-            id: {
-                field: 'idproduit',
+            id_produit: {
+                field: 'id_produit',
                 type: DataType.INTEGER,
                 primaryKey: true
             },
-            nom: {
-                field: 'nomproduit',
+            nom_produit: {
+                field: 'nom_produit',
                 type: DataType.CHAR(50),
             },
         }, {
