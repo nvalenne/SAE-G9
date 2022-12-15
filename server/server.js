@@ -23,7 +23,7 @@ try {
 
 const port = process.env.PORT;
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const swagger_options = {
     swaggerDefinition: {
