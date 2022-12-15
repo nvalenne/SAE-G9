@@ -1,8 +1,8 @@
 <script>
 export default {
-  name: 'ListeManegeView',
-  metaInfo: {
-    title: 'Liste des manèges - Les Papiots'
+    name: 'ListePrestataire',
+    metaInfo: {
+    title: 'Liste des prestataires - Les Papiots'
   },
   data () {
     return {
@@ -110,27 +110,27 @@ export default {
 <template>
   <div id="app">
     <div class="accueil">
-      <h1>Liste des manèges</h1>
+      <h1>Liste des prestataires</h1>
     </div>
-    <v-app id="inspire">
-      <v-card>
-        <v-card-title>
-          Nutrition
-          <v-spacer></v-spacer>
-          <v-text-field
-              v-model="search"
-              append-icon="mdi-magnify"
-              label="Search"
-              single-line
-              hide-details
-          ></v-text-field>
-        </v-card-title>
-        <v-data-table
-            :headers="headers"
-            :items="desserts"
-            :search="search"
-        ></v-data-table>
-      </v-card>
-    </v-app>
+      <v-app id="inspire">
+        <v-card>
+          <v-card-title>
+            Nutrition
+            <v-spacer></v-spacer>
+            <v-text-field
+                v-model="search"
+                append-icon="mdi-magnify"
+                label="Search"
+                single-line
+                hide-details
+            ></v-text-field>
+          </v-card-title>
+          <v-data-table
+              :headers="headers"
+              :items="desserts"
+              :search="search"
+          ></v-data-table>
+        </v-card>
+      </v-app>
   </div>
 </template>

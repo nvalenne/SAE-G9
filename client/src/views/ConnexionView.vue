@@ -2,6 +2,7 @@
   <div id="app">
     <div id="connexion">
       <div style="width:40%">
+        <br>
         <v-card elevation="4" class="cardConnexion">
           <div class="headerConnexion" style="margin-bottom: 15px;">
             <img src="../assets/wheel.gif" style="width: 20%">
@@ -18,7 +19,9 @@
         </v-card>
       </div>
       <div>
-        <span>Vous n'avez pas de compte ? Cliquez <router-link to="/inscription">ici</router-link> pour vous le créer</span>
+        <br>
+        <span>Vous n'avez pas de compte ? Cliquez <router-link to="/inscription">ici</router-link> pour vous le
+          créer</span>
       </div>
     </div>
   </div>
@@ -46,7 +49,8 @@ export default {
   align-items: center;
   flex-direction: column;
 }
-.cardConnexion{
+
+.cardConnexion {
   border-radius: 40px;
   padding: 10px 0 20px 0;
 }
