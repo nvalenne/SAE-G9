@@ -8,6 +8,7 @@ export const createAccount = (req, res) => {
     let prenom = req.body.prenom;
     getAllAccounts((err, users) => {
         if (err) {
+            console.error(err);
             res.status(400).send({success: 1, content: err});
         } else {
             let isValid = true;
@@ -29,9 +30,9 @@ export const createAccount = (req, res) => {
                 console.log(username, mdp, mail, nom, prenom);
                 addAccountInDB(username, mdp, mail, nom, prenom, (err, result) => {
                     if (err) {
-                        res.send({success: 1, content: err})
+                        res.status(400).send({success: 1, content: err})
                     } else {
-                        res.send({success: 0, content: `Utilisateur ajouté : ${result}`});
+                        res.status(200).send({success: 0, content: `Utilisateur ajouté : ${result}`});
                     }
                 }).then( r => console.log(r))
             }

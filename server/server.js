@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import swagger_ui from "swagger-ui-express"
 import swaggerJsDoc from "swagger-jsdoc"
+import cors from "cors";
 dotenv.config();
 
 // Routers
@@ -38,6 +39,13 @@ const swagger_options = {
     },
     apis: ["server.js", "./routes/*.js"]
 };
+
+const corsOptions = {
+    origin: '*',
+    credentials: true,
+    optionSuccessStatus: 200
+}
+app.use(cors(corsOptions))
 
 app.use("/account", compte_router);
 app.use("/prestataires", prestataire_router);

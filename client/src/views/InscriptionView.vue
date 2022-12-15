@@ -7,7 +7,7 @@
             <img alt="Roue" src="../assets/wheel.gif" style="width: 20%">
           </div>
           <div>
-                <v-form id="formInscription" @submit.prevent="submitForm">
+                <v-form id="formInscription" @submit="submitForm" action="/" method="post">
                   <v-col cols="6">
                     <label for="nom">Nom</label>
                     <v-text-field type="text" id="nom" v-model="form.nom"></v-text-field>
@@ -22,7 +22,7 @@
                     <label for="password">Mot de passe</label>
                     <v-text-field type="password" id="password" v-model="form.password"></v-text-field>
                   </v-col>
-                  <v-btn color="success" >S'inscrire</v-btn>
+                  <v-btn color="success" type="submit" >S'inscrire</v-btn>
                 </v-form>
           </div>
         </v-card>
@@ -57,8 +57,10 @@ export default {
   },
   methods : {
     submitForm(){
+      console.log("hey");
       axios.post('http://localhost:3000/account/inscription', this.form)
           .then((res) => console.log(res))
+      this.$router.push('/')
     }
   }
 }
