@@ -112,6 +112,11 @@ export default {
     <div class="accueil">
       <h1>Liste des manèges</h1>
     </div>
+    <v-btn depressed color="primary">
+      <router-link to="/modifier_manege">
+        <span class="boutton">Modifier</span>
+      </router-link>
+    </v-btn>
     <v-app id="inspire">
       <v-card>
         <v-card-title>
@@ -134,3 +139,9 @@ export default {
     </v-app>
   </div>
 </template>
+
+<style scoped>
+  .boutton{
+    color: white;
+  }
+</style>

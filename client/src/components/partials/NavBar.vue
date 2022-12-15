@@ -66,7 +66,6 @@ export default {
 
 <style scoped>
 nav {
-  position: fixed;
   display: flex;
   text-align: center;
   padding: 10px;
