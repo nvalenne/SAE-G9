@@ -39,3 +39,22 @@ export const createAccount = (req, res) => {
         }
     });
 }
+
+export const authentificate = (req, res) => {
+    let username = req.body.username;
+    let password = req.body.password;
+    getAllAccounts((err, users) => {
+        if (err) {
+            console.log(err)
+            res.status(400).send({success:1, data: err});
+        } else {
+            let user = users.find(user => user.username === username);
+            if (user.length === 0) res.status(404).send({success:1, data:"Utilisateur non trouvé"});
+            else if (user.password !== password) res.status(400).send({success:1, data:"Mot de passe incorrect"});
+            else {
+                //appel du service authentification (création du cookie)
+                console.log("ça marche");
+            }
+        }
+    })
+}
