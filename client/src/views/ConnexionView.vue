@@ -8,12 +8,12 @@
             <img src="../assets/wheel.gif" style="width: 20%">
           </div>
           <div>
-            <v-form id="formConnexion">
+            <v-form id="formConnexion" @submit="submitForm" action="/" method="post">
               <label for="username">Nom d'utilisateur</label>
-              <v-text-field type="text" id="username"></v-text-field>
+              <v-text-field type="text" id="username" v-model="form.username"></v-text-field>
               <label for="password">Mot de passe</label>
-              <v-text-field type="password" id="password"></v-text-field>
-              <v-btn color="success">Se connecter</v-btn>
+              <v-text-field type="password" id="password" v-model="form.password"></v-text-field>
+              <v-btn color="success" type="submit">Se connecter</v-btn>
             </v-form>
           </div>
         </v-card>
@@ -29,10 +29,28 @@
 
 <script>
 
+import axios from "axios";
+
 export default {
   name: 'ConnectionView',
   metaInfo: {
     title: 'Connexion - Les Papiots'
+  },
+  data(){
+    return {
+      form: {
+        username: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    submitForm() {
+      axios.post("https://localhost:3000/account/connexion", this.form)
+          .then((res) => console.log(res))
+          .catch((err) => console.error(err))
+      this.$router.push('/');
+    }
   }
 }
 

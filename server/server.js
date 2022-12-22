@@ -3,12 +3,14 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import swagger_ui from "swagger-ui-express"
 import swaggerJsDoc from "swagger-jsdoc"
+import cors from "cors";
 dotenv.config();
 
 // Routers
 import prestataire_router from "./routers/prestataire.router.js";
 import attraction_router from "./routers/attraction.router.js";
 import compte_router from "./routers/compte.router.js";
+import stand_router from "./routers/stand.router.js";
 //
 
 
@@ -23,7 +25,7 @@ try {
 
 const port = process.env.PORT;
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const swagger_options = {
     swaggerDefinition: {
@@ -38,9 +40,17 @@ const swagger_options = {
     apis: ["server.js", "./routes/*.js"]
 };
 
+const corsOptions = {
+    origin: '*',
+    credentials: true,
+    optionSuccessStatus: 200
+}
+app.use(cors(corsOptions))
+
+app.use("/account", compte_router);
 app.use("/prestataires", prestataire_router);
 app.use("/attractions", attraction_router);
-app.use("/account", compte_router);
+app.use("/stands", stand_router);
 app.use("/api-docs", swagger_ui.serve, swagger_ui.setup(swaggerJsDoc(swagger_options)));
 
 app.listen(port, () => {
