@@ -48,7 +48,6 @@ export default {
     submitForm() {
       axios.post("https://localhost:3000/account/connexion", this.form)
           .then((res) => console.log(res))
-          .catch((err) => console.error(err))
       this.$router.push('/');
     }
   }

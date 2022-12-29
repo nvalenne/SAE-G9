@@ -21,7 +21,3 @@ export const getPrestataireByID = (req, res) =>{
         }
     }).then(r => console.log(r));
 }
-
-export const createAccount = () =>{
-
-}

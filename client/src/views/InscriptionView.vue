@@ -57,7 +57,6 @@ export default {
   },
   methods : {
     submitForm(){
-      console.log("hey");
       axios.post('http://localhost:3000/account/inscription', this.form)
           .then((res) => console.log(res))
       this.$router.push('/')

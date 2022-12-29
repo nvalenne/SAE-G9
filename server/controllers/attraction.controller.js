@@ -10,7 +10,7 @@ export const getAttractions = (req, res) =>{
         }
     }).then(r => console.log(r));
 }
-export const getAttractionByID = (req, res) =>{
+export const getAttractionByID = (req, res) => {
     let id = req.params.id;
     getByID(id, (error, result) => {
         if (error) {
