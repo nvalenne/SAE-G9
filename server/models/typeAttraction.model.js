@@ -5,7 +5,8 @@ export const TypeAttraction = (sequelize) => {
             id_type_attraction: {
                 field: 'id_type_attraction',
                 type: DataType.INTEGER,
-                primaryKey: true
+                primaryKey: true,
+                autoIncrement: true
             },
             designation: {
                 field: 'designation',

@@ -5,7 +5,8 @@ export const Service = (sequelize) => {
             id_service: {
                 field: 'id_service',
                 type: DataType.INTEGER,
-                primaryKey: true
+                primaryKey: true,
+                autoIncrement: true
             },
             nom_service: {
                 field: 'nom_service',

@@ -4,7 +4,8 @@ export const Emplacement = (sequelize) => {
         id_emplacement: {
             field: 'id_emplacement',
             type: DataType.INTEGER,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement: true
         },
         prix: {
             field: 'prix',

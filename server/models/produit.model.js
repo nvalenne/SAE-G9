@@ -5,7 +5,8 @@ export const Produit = (sequelize) => {
             id_produit: {
                 field: 'id_produit',
                 type: DataType.INTEGER,
-                primaryKey: true
+                primaryKey: true,
+                autoIncrement: true
             },
             nom_produit: {
                 field: 'nom_produit',

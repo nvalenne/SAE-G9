@@ -5,7 +5,8 @@ export const TypeStand = (sequelize) => {
             id_type_stand: {
                 field: 'id_type_stand',
                 type: DataType.INTEGER,
-                primaryKey: true
+                primaryKey: true,
+                autoIncrement: true
             },
             designation: {
                 field: 'designation',

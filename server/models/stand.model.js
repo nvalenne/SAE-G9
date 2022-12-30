@@ -5,7 +5,8 @@ export const Stand = (sequelize) => {
             id_stand: {
                 field: 'id_stand',
                 type: DataType.INTEGER,
-                primaryKey: true
+                primaryKey: true,
+                autoIncrement: true
             },
             nom: {
                 field: 'nom',
@@ -13,19 +14,19 @@ export const Stand = (sequelize) => {
             },
             prix: {
                 field: 'prix',
-                type: DataType.CHAR(50),
+                type: DataType.DECIMAL(5,2),
             },
             recette: {
                 field: 'recette',
-                type: DataType.STRING,
+                type: DataType.DECIMAL(5,2),
             },
             nbr_clients_total: {
                 field: 'nbr_clients_total',
-                type: DataType.CHAR(50),
+                type: DataType.INTEGER,
             },
             attente: {
                 field: 'attente',
-                type: DataType.CHAR(50),
+                type: DataType.INTEGER,
             }
         }, {
             tableName: "stand",
