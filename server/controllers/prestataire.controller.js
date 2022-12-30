@@ -6,7 +6,7 @@ export const getPrestataires = (req, res) =>{
             console.error(error);
             res.status(400).send({success:1, content: error})
         } else {
-            res.status(200).send(JSON.stringify(result))
+            res.status(200).send(result)
         }
     }).then(r => console.log(r));
 }
@@ -17,7 +17,7 @@ export const getPrestataireByID = (req, res) =>{
             console.error(error);
             res.status(400).send({success:1, content: error})
         } else {
-            res.status(200).send(JSON.stringify(result))
+            res.status(200).send(result)
         }
     }).then(r => console.log(r));
 }

@@ -12,6 +12,7 @@ export const getAllPrestataires = async (callback) => {
     }
 }
 
+/*
 export const getByID = async (id, callback) => {
     try {
         const result = await db.compte.findAll({
@@ -19,6 +20,21 @@ export const getByID = async (id, callback) => {
                 role: 'prestataire',
                 id: id
             }
+        });
+        return callback(null, result);
+    } catch (e){
+        return callback(e, []);
+    }
+}
+*/
+
+export const getByID = async (id, callback) => {
+    try {
+        const result = await (db.compte).findByPk(id,{
+            where: {
+                role: 'prestataire'
+            },
+            include: [db.attraction,db.stand]
         });
         return callback(null, result);
     } catch (e){

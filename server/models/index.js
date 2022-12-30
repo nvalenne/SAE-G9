@@ -38,8 +38,8 @@ db.billet = Billet(sequelize);
 
 
 // Relation entre attraction et compte
-db.compte.hasMany(db.attraction,{foreignKey:'id_compte'});
-db.attraction.belongsTo(db.compte, {foreignKey:'id_compte'});
+(db.compte).hasMany(db.attraction,{foreignKey:'id_compte'});
+(db.attraction).belongsTo(db.compte, {foreignKey:'id_compte'});
 
 //Relation entre attraction et typeAttraction
 db.type_attraction.hasMany(db.attraction, {foreignKey: 'id_type_attraction'})
@@ -71,11 +71,15 @@ db.emplacement.hasOne(db.stand, {foreignKey: 'id_emplacement'});
 //
 
 // Association AvisAttraction entre Attraction et Compte
+/*
 db.attraction.belongsToMany(db.compte, {through: db.avis_attraction});
 db.compte.belongsToMany(db.attraction, {through: db.avis_attraction});
+ */
 
 // Association AvisStand entre Stand et Compte
+/*
 db.stand.belongsToMany(db.compte, {through: db.avis_stand});
 db.compte.belongsToMany(db.stand, {through: db.avis_stand});
+*/
 
 export default db;
