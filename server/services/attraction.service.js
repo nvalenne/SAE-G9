@@ -20,3 +20,16 @@ export const getByID = async (id, callback) => {
         return callback(e, []);
     }
 }
+
+export const getTypeOfAnAttraction = async (id, callback) => {
+    try {
+        const result = await db.type_attraction.findAll({
+            where: {
+                id_type_attraction: id
+            }
+        });
+        return callback(null, result);
+    } catch (e) {
+        return callback(e, []);
+    }
+}

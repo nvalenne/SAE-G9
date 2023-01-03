@@ -8,15 +8,11 @@
       </v-btn>
     </div>
     <div class="manege">
-      <editor
-          initial-value="Once upon a time..."
-      />
     </div>
   </div>
 </template>
 
 <script>
-import editor from '@tinymce/tinymce-vue'
 export default {
   name: "ModifierManege",
 }
