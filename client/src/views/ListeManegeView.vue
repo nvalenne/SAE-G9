@@ -65,7 +65,11 @@ export default {
                       src="https://www.petitfute.com/medias/mag/12133/835/8896-les-10-parcs-d-attraction.jpg"
                   ></v-img>
                   <span>Propriétaire : {{attraction.compte.nom}} {{attraction.compte.prenom}}</span><br>
-                  <span>Type d'attraction : {{attraction.type_attraction.designation}}</span>
+                  <span>Type d'attraction : {{attraction.type_attraction.designation}}</span><br>
+                  <span>Taille requise : {{attraction.taille_requise}}m</span><br>
+                  <span>Temps d'attente : {{attraction.attente}} min</span><br>
+                  <span>Prix enfant : {{attraction.prix_enfant}}€   -   </span>
+                  <span>Prix adulte : {{attraction.prix_adulte}}€</span>
                 </v-card-text>
               </v-card>
             </a>
@@ -101,7 +105,9 @@ export default {
                       src="https://www.petitfute.com/medias/mag/12133/835/8896-les-10-parcs-d-attraction.jpg"
                   ></v-img>
                   <span>Propriétaire : {{stand.compte.nom}} {{stand.compte.prenom}}</span><br>
-                  <span>Type de stand : {{stand.type_stand.designation}}</span>
+                  <span>Type de stand : {{stand.type_stand.designation}}</span><br>
+                  <span>Temps d'attente : {{stand.attente}} min</span><br>
+                  <span>Prix : {{stand.prix}}€</span>
                 </v-card-text>
               </v-card>
             </a>

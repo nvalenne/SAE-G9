@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS formulaire CASCADE;
+DROP TABLE IF EXISTS formulaire;
 DROP TABLE IF EXISTS avis_attraction CASCADE;
 DROP TABLE IF EXISTS avis_stand CASCADE;
 DROP TABLE IF EXISTS menu CASCADE;
@@ -151,7 +151,7 @@ CREATE TABLE formulaire(
     nom VARCHAR,
     message VARCHAR(255),
     PRIMARY KEY (id_formulaire)
-)
+);
 
 
 
