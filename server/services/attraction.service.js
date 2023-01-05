@@ -1,7 +1,17 @@
 import db from "../models/index.js";
 export const getAllAttractions = async (callback) => {
     try {
-        const result = await db.attraction.findAll();
+        const result = await db.attraction.findAll({
+            include: [
+                {
+                model: db.compte,
+                }
+                ,{
+                model: db.type_attraction
+                }
+            ],
+
+        });
         return callback(null, result);
     } catch (e){
         return callback(e, []);

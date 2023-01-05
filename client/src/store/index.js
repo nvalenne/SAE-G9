@@ -6,27 +6,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: () => ({
-    attractions:{},
-    prestataires:{},
-    stands:{},
+    attractions:[],
+    prestataires:[],
+    stands:[],
   }),
-  getters: {
-    getAttractions: (state) => {
-      return state.attractions
-    },
-    getPrestataires: (state) => {
-      return state.prestataires
-    },
-    getStands: (state) => {
-      return state.stands
-    },
-  },
   mutations: {
       setAttractionsContent(state, attractions){
         state.attractions = attractions
       },
       setPrestatairesContent(state, prestataires){
-        state.attractions = prestataires
+        state.prestataires = prestataires
       },
       setStandsContent(state, stands){
         state.stands = stands

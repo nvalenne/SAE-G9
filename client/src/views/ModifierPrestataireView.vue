@@ -7,7 +7,7 @@
         </router-link>
       </v-btn>
     </div>
-    <div class="manege">
+    <div class="prestataire">
 
     </div>
   </div>
@@ -15,15 +15,10 @@
 
 <script>
 export default {
-  name: "ModifierManege",
+  name: "ModifierPrestataireView"
 }
 </script>
 
 <style scoped>
-  v-btn{
-    width: 20px;
-  }
-  .boutton{
-    color: white;
-  }
+
 </style>
