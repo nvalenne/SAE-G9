@@ -31,7 +31,8 @@ import {AvisAttraction} from "./avis_attraction.model.js";
 db.avis_attraction = AvisAttraction(sequelize);
 import {Billet} from "./billet.model.js";
 db.billet = Billet(sequelize);
-
+import {FormulaireContact} from "./formulaire_contact.model.js";
+db.formulaire_contact = FormulaireContact(sequelize);
 //
 // Relations
 //
