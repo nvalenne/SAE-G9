@@ -1,13 +1,45 @@
-async function getAllAttractions(callback){
+import db from "../models/index.js";
+export const getAllAttractions = async (callback) => {
     try {
-        let repo = require("../repository/AttractionRepository")
-        let results = await new repo().getAllAttraction()
-        return callback(null, results.json())
-    } catch (e) {
-        return callback(e, [])
+        const result = await db.attraction.findAll({
+            include: [
+                {
+                model: db.compte,
+                }
+                ,{
+                model: db.type_attraction
+                }
+            ],
+
+        });
+        return callback(null, result);
+    } catch (e){
+        return callback(e, []);
     }
 }
 
-module.exports = {
-    getAllAttractions
+export const getByID = async (id, callback) => {
+    try {
+        const result = await db.attraction.findAll({
+            where:{
+                id_attraction: id
+            }
+        });
+        return callback(null, result);
+    } catch (e){
+        return callback(e, []);
+    }
+}
+
+export const getTypeOfAnAttraction = async (id, callback) => {
+    try {
+        const result = await db.type_attraction.findAll({
+            where: {
+                id_type_attraction: id
+            }
+        });
+        return callback(null, result);
+    } catch (e) {
+        return callback(e, []);
+    }
 }

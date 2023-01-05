@@ -7,15 +7,23 @@
             <img alt="Roue" src="../assets/wheel.gif" style="width: 20%">
           </div>
           <div>
-            <v-form id="formInscription">
-              <label id="email">Adresse Email</label>
-              <v-text-field type="text" id="email"></v-text-field>
-              <label id="username">Nom d'utilisateur</label>
-              <v-text-field type="text" id="username"></v-text-field>
-              <label id="password">Mot de passe</label>
-              <v-text-field type="password" id="password"></v-text-field>
-              <v-btn color="success">S'inscrire</v-btn>
-            </v-form>
+                <v-form id="formInscription" @submit="submitForm" action="/" method="post">
+                  <v-col cols="6">
+                    <label for="nom">Nom</label>
+                    <v-text-field type="text" id="nom" v-model="form.nom"></v-text-field>
+                    <label for="prenom">Prénom</label>
+                    <v-text-field type="text" id="prenom" v-model="form.prenom"></v-text-field>
+                    <label for="email">Adresse Email</label>
+                    <v-text-field type="text" id="email" v-model="form.mail"></v-text-field>
+                  </v-col>
+                  <v-col cols="6">
+                    <label for="username">Nom d'utilisateur</label>
+                    <v-text-field type="text" id="username" v-model="form.username"></v-text-field>
+                    <label for="password">Mot de passe</label>
+                    <v-text-field type="password" id="password" v-model="form.password"></v-text-field>
+                  </v-col>
+                  <v-btn color="success" type="submit" >S'inscrire</v-btn>
+                </v-form>
           </div>
         </v-card>
       </div>
@@ -29,10 +37,30 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: 'InscriptionView',
+  data(){
+    return {
+      form: {
+        nom:'',
+        prenom:'',
+        mail:'',
+        username:'',
+        password:''
+      }
+    }
+  },
   metaInfo: {
     title: 'Inscription - Les Papiots'
+  },
+  methods : {
+    submitForm(){
+      axios.post('http://localhost:3000/account/inscription', this.form)
+          .then((res) => console.log(res))
+      this.$router.push('/')
+    }
   }
 }
 </script>

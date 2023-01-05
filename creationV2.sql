@@ -1,141 +1,168 @@
-DROP TABLE IF EXISTS MENU;
-DROP TABLE IF EXISTS PROPOSES;
-DROP TABLE IF EXISTS PROPOSEA;
-DROP TABLE IF EXISTS PLACEMENTS;
-DROP TABLE IF EXISTS PLACEMENTA;
-DROP TABLE IF EXISTS STAND;
-DROP TABLE IF EXISTS ATTRACTION;
-DROP TABLE IF EXISTS PRODUIT;
-DROP TABLE IF EXISTS SERVICE;
-DROP TABLE IF EXISTS COMPTE;
-DROP TABLE IF EXISTS TYPEATTRACTION;
-DROP TABLE IF EXISTS TYPESTAND;
-DROP TABLE IF EXISTS EMPLACEMENT;
+DROP TABLE IF EXISTS avis_attraction CASCADE;
+DROP TABLE IF EXISTS avis_stand CASCADE;
+DROP TABLE IF EXISTS menu CASCADE;
+DROP TABLE IF EXISTS service_stand CASCADE;
+DROP TABLE IF EXISTS service_attraction CASCADE;
+DROP TABLE IF EXISTS stand CASCADE;
+DROP TABLE IF EXISTS attraction CASCADE;
+DROP TABLE IF EXISTS billet CASCADE;
+DROP TABLE IF EXISTS produit CASCADE;
+DROP TABLE IF EXISTS service CASCADE;
+DROP TABLE IF EXISTS compte CASCADE;
+DROP TABLE IF EXISTS type_attraction CASCADE;
+DROP TABLE IF EXISTS type_stand CASCADE;
+DROP TABLE IF EXISTS emplacement CASCADE;
 
-CREATE TABLE EMPLACEMENT(
-   idEmplacement SERIAL,
+CREATE TABLE emplacement(
+   id_emplacement SERIAL,
    prix DECIMAL(6,2),
    taille DECIMAL(6,2),
-   PRIMARY KEY(idEmplacement)
+   PRIMARY KEY(id_emplacement)
 );
 
-CREATE TABLE TYPESTAND(
-   idTypeStand SERIAL,
+CREATE TABLE type_stand(
+   id_type_stand SERIAL,
    designation VARCHAR(50),
-   PRIMARY KEY(idTypeStand)
+   PRIMARY KEY(id_type_stand)
 );
 
-CREATE TABLE TYPEATTRACTION(
-   idTypeAttraction SERIAL,
+CREATE TABLE type_attraction(
+   id_type_attraction SERIAL,
    designation VARCHAR(50),
-   PRIMARY KEY(idTypeAttraction)
+   PRIMARY KEY(id_type_attraction)
 );
 
-CREATE TABLE COMPTE(
-   idCompte INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE compte(
+   id_compte SERIAL,
    identifiant VARCHAR(50),
-   mdp VARCHAR(50),
+   mdp VARCHAR(255),
    mail VARCHAR(50),
    nom VARCHAR(50),
    role VARCHAR(50),
    prenom VARCHAR(50),
-   PRIMARY KEY(idCompte)
+   PRIMARY KEY(id_compte)
 );
 
-CREATE TABLE SERVICE(
-   idService INT NOT NULL AUTO_INCREMENT,
-   nomService VARCHAR(50),
-   PRIMARY KEY(idService)
+CREATE TABLE service(
+   id_service SERIAL,
+   nom_service VARCHAR(50),
+   PRIMARY KEY(id_service)
 );
 
-CREATE TABLE PRODUIT(
-   idProduit INT NOT NULL AUTO_INCREMENT,
-   nomProduit VARCHAR(50),
-   PRIMARY KEY(idProduit)
+CREATE TABLE produit(
+   id_produit SERIAL,
+   nom_produit VARCHAR(50),
+   PRIMARY KEY(id_produit)
 );
 
-CREATE TABLE ATTRACTION(
-   idAttraction INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE billet(
+    id_billet SERIAL,
+    dateBillet DATE,
+    prix SMALLINT,
+    id_compte INTEGER NOT NULL,
+    PRIMARY KEY (id_billet),
+    FOREIGN KEY (id_compte) REFERENCES compte(id_compte) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE attraction(
+   id_attraction SERIAL,
    nom VARCHAR(50),
-   prixAdulte DECIMAL(5,2),
-   prixEnfant DECIMAL(5,2),
-   tailleRequise DECIMAL(3,2),
+   prix_adulte DECIMAL(5,2),
+   prix_enfant DECIMAL(5,2),
+   taille_requise DECIMAL(3,2),
    recette DECIMAL(6,2),
-   nbrClientsTotal INT,
+   nbr_clients_total INT,
    attente INT,
-   idTypeAttraction INT NOT NULL,
-   idCompte INT NOT NULL,
-   FOREIGN KEY(idTypeAttraction) REFERENCES TYPEATTRACTION(idTypeAttraction),
-   FOREIGN KEY(idCompte) REFERENCES COMPTE(idCompte),
-   PRIMARY KEY(idAttraction)
+   id_type_attraction INT NOT NULL,
+   id_compte INT NOT NULL,
+   id_emplacement INT NOT NULL,
+   FOREIGN KEY(id_type_attraction) REFERENCES type_attraction(id_type_attraction) ON DELETE CASCADE ON UPDATE CASCADE,
+   FOREIGN KEY(id_compte) REFERENCES compte(id_compte) ON DELETE CASCADE ON UPDATE CASCADE,
+   FOREIGN KEY(id_emplacement) REFERENCES emplacement(id_emplacement) ON DELETE CASCADE ON UPDATE CASCADE,
+   PRIMARY KEY(id_attraction)
 );
 
-CREATE TABLE STAND(
-   idStand INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE stand(
+   id_stand SERIAL,
    nom VARCHAR(50),
    prix DECIMAL(5,2),
    recette DECIMAL(6,2),
-   nbrClientsTotal INT,
+   nbr_clients_total INT,
    attente INT,
-   idTypeStand INT NOT NULL,
-   idCompte INT NOT NULL,
-   FOREIGN KEY(idTypeStand) REFERENCES TYPESTAND(idTypeStand),
-   FOREIGN KEY(idCompte) REFERENCES COMPTE(idCompte),
-   PRIMARY KEY(idStand)
+   id_type_stand INT NOT NULL,
+   id_compte INT NOT NULL,
+   id_emplacement INT NOT NULL,
+   FOREIGN KEY(id_type_stand) REFERENCES type_stand(id_type_stand) ON DELETE CASCADE ON UPDATE CASCADE,
+   FOREIGN KEY(id_compte) REFERENCES compte(id_compte) ON DELETE CASCADE ON UPDATE CASCADE,
+   FOREIGN KEY(id_emplacement) REFERENCES emplacement(id_emplacement) ON DELETE CASCADE ON UPDATE CASCADE,
+   PRIMARY KEY(id_stand)
 );
 
-CREATE TABLE PLACEMENTA(
-   idPlacementA INT NOT NULL AUTO_INCREMENT,
-   idAttraction INT NOT NULL,
-   idEmplacement INT NOT NULL,
-   FOREIGN KEY(idAttraction) REFERENCES ATTRACTION(idAttraction),
-   FOREIGN KEY(idEmplacement) REFERENCES EMPLACEMENT(idEmplacement),
-   PRIMARY KEY(idPlacementA)
+CREATE TABLE service_stand(
+   id_stand INT,
+   id_service INT,
+   FOREIGN KEY(id_stand) REFERENCES stand(id_stand) ON DELETE CASCADE ON UPDATE CASCADE,
+   FOREIGN KEY(id_service) REFERENCES service(id_service) ON DELETE CASCADE ON UPDATE CASCADE,
+   PRIMARY KEY(id_stand, id_service)
 );
 
-CREATE TABLE PLACEMENTS(
-   idPlacementS INT NOT NULL AUTO_INCREMENT,
-   idStand INT NOT NULL,
-   idEmplacement INT NOT NULL,
-   FOREIGN KEY(idStand) REFERENCES STAND(idStand),
-   FOREIGN KEY(idEmplacement) REFERENCES EMPLACEMENT(idEmplacement),
-   PRIMARY KEY(idPlacementS)
+CREATE TABLE service_attraction(
+    id_attraction INT,
+    id_service INT,
+    FOREIGN KEY(id_attraction) REFERENCES attraction(id_attraction) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(id_service) REFERENCES service(id_service) ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY(id_attraction, id_service)
 );
 
-CREATE TABLE PROPOSEA(
-   idAttraction INT,
-   idService INT,
-   FOREIGN KEY(idAttraction) REFERENCES ATTRACTION(idAttraction),
-   FOREIGN KEY(idService) REFERENCES SERVICE(idService),
-   PRIMARY KEY(idAttraction, idService)
+CREATE TABLE menu(
+   id_stand INT,
+   id_produit INT,
+   FOREIGN KEY(id_stand) REFERENCES stand(id_stand) ON DELETE CASCADE ON UPDATE CASCADE,
+   FOREIGN KEY(id_produit) REFERENCES produit(id_produit) ON DELETE CASCADE ON UPDATE CASCADE,
+   PRIMARY KEY(id_stand, id_produit)
+);
+CREATE TABLE avis_stand(
+    id_stand INT,
+    id_compte INT,
+    message VARCHAR,
+    note SMALLINT,
+    date DATE,
+    FOREIGN KEY(id_stand) REFERENCES stand(id_stand) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(id_compte) REFERENCES compte(id_compte) ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY (id_stand, id_compte, date)
 );
 
-CREATE TABLE PROPOSES(
-   idStand INT,
-   idService INT,
-   FOREIGN KEY(idStand) REFERENCES STAND(idStand),
-   FOREIGN KEY(idService) REFERENCES SERVICE(idService),
-   PRIMARY KEY(idStand, idService)
+CREATE TABLE avis_attraction(
+    id_attraction INT,
+    id_compte INT,
+    message VARCHAR,
+    note SMALLINT,
+    date DATE,
+    FOREIGN KEY(id_attraction) REFERENCES attraction(id_attraction) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(id_compte) REFERENCES compte(id_compte) ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY (id_attraction, id_compte, date)
 );
 
-CREATE TABLE MENU(
-   idStand INT,
-   idProduit INT,
-   FOREIGN KEY(idStand) REFERENCES STAND(idStand),
-   FOREIGN KEY(idProduit) REFERENCES PRODUIT(idProduit),
-   PRIMARY KEY(idStand, idProduit)
-);
 
-INSERT INTO EMPLACEMENT (prix, taille) VALUES
+
+
+INSERT INTO emplacement (prix, taille) VALUES
 (10,100),
 (10,100),
-(10,100);
+(10,100),
+(10,100),
+(10,100),
+(10,100),
+(10,100),
+(10,100),
+(10,100)
+;
 
-INSERT INTO TYPESTAND (designation) VALUES
+INSERT INTO type_stand (designation) VALUES
 ('pêche aux canards'),
 ('manger');
 
-INSERT INTO TYPEATTRACTION (designation) VALUES
+INSERT INTO type_attraction (designation) VALUES
 ('grand huit'),
 ('auto-tamponneuses'),
 ('rivière canadienne'),
@@ -147,7 +174,7 @@ INSERT INTO TYPEATTRACTION (designation) VALUES
 ('reverse bungee'),
 ('bulles sur eau');
 
-INSERT INTO Compte (identifiant, mdp, mail, nom, role, prenom) VALUES
+INSERT INTO compte (identifiant, mdp, mail, nom, role, prenom) VALUES
 ('admin1','1234','admin1@gmail.com','Jean','admin','Michel'),
 ('admin2','abcd','admin2@gmail.com','Philippe','admin','Martin'),
 ('prestataire1','1234','prestataire1@gmail.com','Jacques','prestataire','Max'),
@@ -155,7 +182,7 @@ INSERT INTO Compte (identifiant, mdp, mail, nom, role, prenom) VALUES
 ('prestataire3','1234','prestataire3@gmail.com','Ryan','prestataire','Poupou'),
 ('prestataire4','abcd','prestataire4@gmail.com','Steven','prestataire','I');
 
-INSERT INTO SERVICE (nomService) VALUES
+INSERT INTO service (nom_service) VALUES
 ('prix à gagner'),
 ('vente de nourriture'),
 ('vente de goodies'),
@@ -163,42 +190,27 @@ INSERT INTO SERVICE (nomService) VALUES
 ('cadeaux à gagner'),
 ('accès mobilité réduite');
 
-INSERT INTO PRODUIT (nomProduit) VALUES
+INSERT INTO produit (nom_produit) VALUES
 ('churros'),
 ('barbe a papa');
 
-INSERT INTO ATTRACTION (nom, prixAdulte, prixEnfant, tailleRequise, recette, nbrClientsTotal, attente, idTypeAttraction, idCompte) VALUES
-('dégueulator',10,8,1.3,0,0,0,7,3),
-('space mountains',10,8,1.3,0.,0,0,1,3),
-('rapide et furieux',10,8,1.3,0,0,0,1,4),
-('splash',10,8,1.3,0,0,0,3,5),
-('Spaceglider',10,8,1.3,0,0,0,6,6);
+INSERT INTO attraction(nom, prix_adulte, prix_enfant
+                        , taille_requise, recette, nbr_clients_total
+                        , attente, id_type_attraction, id_compte
+                        , id_emplacement) VALUES
+('dégueulator',10,8,1.3,0,0,0,7,3,1),
+('space mountains',10,8,1.3,0.,0,0,1,3,2),
+('rapide et furieux',10,8,1.3,0,0,0,1,4,3),
+('splash',10,8,1.3,0,0,0,3,5,4),
+('Spaceglider',10,8,1.3,0,0,0,6,6,5);
 
-INSERT INTO STAND (nom, prix, recette, nbrClientsTotal, attente, idTypeStand, idCompte) VALUES
-('canards',10,0,0,0,1,3),
-('carabine',10,0,0,0,1,3),
-('basket',10,0,0,0,1,4),
-('I',0,0,0,0,2,4);
+INSERT INTO stand (nom, prix, recette, nbr_clients_total, attente, id_type_stand, id_compte, id_emplacement) VALUES
+('canards',10,0,0,0,1,3,6),
+('carabine',10,0,0,0,1,3,7),
+('basket',10,0,0,0,1,4,8),
+('I',0,0,0,0,2,4,9);
 
-INSERT INTO MENU(idStand,idProduit) VALUES
+INSERT INTO menu(id_stand,id_produit) VALUES
 (4,1),
 (4,2);
 
-
-/*
-
-INSERT INTO PLACEMENTA(
-
-);
-
-INSERT INTO PLACEMENTS(
-
-);
-
-INSERT INTO PROPOSEA(
-
-);
-
-INSERT INTO PROPOSES(
-
-);

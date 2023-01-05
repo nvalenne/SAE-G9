@@ -7,6 +7,8 @@ import ListeManegeView from "@/views/ListeManegeView";
 import ListePrestataireView from "@/views/ListePrestataireView";
 import ConnexionView from "@/views/ConnexionView";
 import InscriptionView from "@/views/InscriptionView";
+import ModifierManegeView from "@/views/ModifierManegeView.vue";
+import ModifierPrestataireView from "@/views/ModifierPrestataireView";
 
 Vue.use(VueRouter)
 
@@ -29,12 +31,31 @@ const routes = [
   {
     path: '/liste_manege',
     name: 'ListeManegeView',
-    component: ListeManegeView
+    component: ListeManegeView,
+    children: [
+      {
+        path: ':id',
+        name: 'manege',
+        component: ModifierManegeView
+      }
+    ]
+  },
+  {
+    path: '/modifier_manege',
+    name: 'ModifierManegeView',
+    component: ModifierManegeView
   },
   {
     path: '/liste_prestataire',
     name: 'ListePrestataireView',
-    component: ListePrestataireView
+    component: ListePrestataireView,
+    children: [
+      {
+        path: ':id',
+        name: 'prestataire',
+        component: ModifierPrestataireView
+      }
+    ]
   },
   {
     path: '/connexion',

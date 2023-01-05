@@ -66,9 +66,11 @@ export default {
 
 <style scoped>
 nav {
+  display: flex;
   text-align: center;
   padding: 10px;
   background-color: rgb(29, 28, 27);
+  transition: all .2s ease-in-out;
 }
 
 nav text {
