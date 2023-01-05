@@ -7,6 +7,7 @@ import cors from "cors";
 dotenv.config();
 
 // Routers
+import formulaire_router from "./routers/formulaire.router.js";
 import prestataire_router from "./routers/prestataire.router.js";
 import attraction_router from "./routers/attraction.router.js";
 import compte_router from "./routers/compte.router.js";
@@ -47,6 +48,7 @@ const corsOptions = {
 }
 app.use(cors(corsOptions))
 
+app.use("/formulairecontact", formulaire_router);
 app.use("/account", compte_router);
 app.use("/prestataires", prestataire_router);
 app.use("/attractions", attraction_router);

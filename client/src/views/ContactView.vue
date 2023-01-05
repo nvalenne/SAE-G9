@@ -8,11 +8,16 @@
           Votre demande sera traitée sera dans les plus brefs délais.
         </v-card-text>
         <div>
-          <v-form class="contactForm" action="#">
-            <v-text-field label="Adresse mail" required></v-text-field>
-            <v-text-field label="Nom" required></v-text-field>
-            <v-text-field label="Prénom" required></v-text-field>
-            <v-textarea label="Message" required></v-textarea>
+          <v-form class="contactForm" @submit="submitForm" action="/" method="post">
+            <label for="email">Adresse mail</label>
+            <v-text-field type="text" id="email" v-model="form.email"></v-text-field>
+            <label for="prenom">Prénom</label>
+            <v-text-field type="text" id="prenom" v-model="form.prenom"></v-text-field>
+            <label for="email">Nom</label>
+            <v-text-field type="text" id="nom" v-model="form.nom"></v-text-field>
+            <label for="email">Message</label>
+            <v-textarea type="text" id="message" v-model="form.message"></v-textarea>
+
             <v-btn color="success" type="submit">Envoyer</v-btn>
           </v-form>
         </div>
@@ -22,12 +27,31 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "ContactView",
+  data(){
+    return{
+      form:{
+        email:'',
+        prenom:'',
+        nom:'',
+        message:''
+      }
+    }
+  },
   metaInfo: {
     title: "Nous contacter - Les Papiots",
   },
-};
+  methods : {
+    submitForm(){
+      axios.post('http://localhost:3000/formulairecontact', this.form)
+          .then((res) => console.log(res))
+      this.$router.push('/')
+    }
+  }
+}
 </script>
 
 <style scoped>
