@@ -55,7 +55,7 @@
           </div>
         </v-row>
         <v-row class="rowCopyright">
-          <span>SAE-G9 &copy; 2022. Tous droits réservés(c'est faux on a aucun droit mdrrr)</span>
+          <span>SAE-G9 &copy; 2022. Tous droits réservés</span>
         </v-row>
       </v-container>
 
