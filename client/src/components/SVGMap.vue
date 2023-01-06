@@ -97,45 +97,47 @@
               height="119.15579" x="218.42175" y="151.13454" />
 
 
+
+
         <!-- premier groupe de stand entrée parking droite-->
         <!-- 1 3 5 7 9-->
         <!-- 2 4 6 8 10-->
         <g  id="g1351" style="fill:#ffc022" transform="matrix(0.67782228,0,0,0.91852108,0.05835778,8.643752)">
 
-          <rect y="246.01869" x="144.39273" height="10.021864" width="23.385347" id="1"
+          <rect @click="clickEmplacement($event)" y="246.01869" x="144.39273" height="10.021864" width="23.385347" id="1"
                 style="fill:#ffc022;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" />
 
-          <rect  style="fill:#ffc022;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="2"
+          <rect  @click="clickEmplacement($event)" style="fill:#ffc022;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="2"
                 width="23.364111" height="11.085116" x="144.40169" y="256.18719" />
 
-          <rect y="246.01869" x="167.77808" height="10.021864" width="23.385347" id="3"
+          <rect @click="clickEmplacement($event)" y="246.01869" x="167.77808" height="10.021864" width="23.385347" id="3"
                 style="fill:#ffc022;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" />
 
-          <rect y="256.04056" x="167.82056" height="11.085116" width="23.364111" id="4"
+          <rect @click="clickEmplacement($event)" y="256.04056" x="167.82056" height="11.085116" width="23.364111" id="4"
                 style="fill:#ffc022;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
 
-          <rect y="246.01869" x="191.18466" height="10.021854" width="23.364111" id="5"
+          <rect @click="clickEmplacement($event)" y="246.01869" x="191.18466" height="10.021854" width="23.364111" id="5"
                 style="fill:#ffc022;stroke:#000000;stroke-width:0.384269;stroke-opacity:1" />
 
-          <rect style="fill:#ffc022;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="6"
+          <rect @click="clickEmplacement($event)" style="fill:#ffc022;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="6"
             width="23.364111" height="11.085116" x="191.18466" y="256.04056" />
 
-          <rect y="246.01869" x="214.54877" height="10.021864" width="23.385347" id="7"
+          <rect @click="clickEmplacement($event)" y="246.01869" x="214.54877" height="10.021864" width="23.385347" id="7"
             style="fill:#ffc022;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" />
 
-          <rect  style="fill:#ffc022;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="8"
+          <rect @click="clickEmplacement($event)" style="fill:#ffc022;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="8"
                 width="23.364111" height="11.085116" x="214.54877" y="256.04056" />
 
-          <rect style="fill:#ffc022;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="9"
+          <rect @click="clickEmplacement($event)" style="fill:#ffc022;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="9"
                 width="23.385347" height="10.021864" x="237.93411" y="246.01869" />
 
-          <rect y="256.04056" x="237.95535" height="11.085116" width="23.364111" id="10"
+          <rect @click="clickEmplacement($event)" y="256.04056" x="237.95535" height="11.085116" width="23.364111" id="10"
                 style="fill:#ffc022;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
         </g>
 
 
         <!-- stand nourriture 11-->
-        <rect
+        <rect @click="clickEmplacement($event)"
               style="fill:#ff6600;stroke:#000000;stroke-width:0.318791;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
               y="-258.23175" x="-208.20747" height="23.905682" width="17.698614" id="11"
               transform="matrix(-0.99999931,-0.0011779,-0.0020892,-0.99999782,0,0)" />
@@ -145,20 +147,20 @@
         <g transform="matrix(-0.00434695,0.9185152,-1.2117633,-0.00329498,515.74925,5.8522062)" id="g252"
            style="fill:#ff6600">
 
-          <rect style="fill:#ff6600;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="12" width="23.364111"
+          <rect @click="clickEmplacement($event)" style="fill:#ff6600;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="12" width="23.364111"
                 height="11.085116" x="214.54877" y="256.04056" />
 
-          <rect y="256.04056" x="167.82056" height="11.085116" width="23.364111" id="14"
+          <rect @click="clickEmplacement($event)" y="256.04056" x="167.82056" height="11.085116" width="23.364111" id="14"
                 style="fill:#ff6600;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
 
         </g>
         <!-- Stand nouriturre droite -->
         <g id="g258" transform="matrix(-0.00440793,0.9166822,-1.2287594,-0.00328841,533.73352,6.2374128)"
            style="fill:#ff6600">
-          <rect @click="test" y="256.04056" x="214.54877" height="11.085116" width="23.364111" id="13"
+          <rect  @click="clickEmplacement($event)" y="256.04056" x="214.54877" height="11.085116" width="23.364111" id="13"
                 style="fill:#ff6600;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
 
-          <rect   style="fill:#ff6600;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="15" width="23.364111"
+          <rect  @click="clickEmplacement($event)" style="fill:#ff6600;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="15" width="23.364111"
                   height="11.085116" x="167.82056" y="256.04056" />
         </g>
 
@@ -170,19 +172,19 @@
         <!-- ... 20 19 18 17 16-->
         <g id="g230-6" transform="matrix(0.67782228,0,0,0.91852108,52.981099,-107.64652)" style="fill:#ff9900">
 
-          <rect style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="16"
+          <rect @click="clickEmplacement($event)" style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="16"
                 width="23.364111" height="11.085116" x="227.40874" y="255.74031" />
 
-          <rect y="255.74031" x="204.04463" height="11.085116" width="23.364111" id="17"
+          <rect @click="clickEmplacement($event)" y="255.74031" x="204.04463" height="11.085116" width="23.364111" id="17"
                 style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
 
-          <rect y="255.74031" x="180.68053" height="11.085116" width="23.364111" id="18"
+          <rect @click="clickEmplacement($event)" y="255.74031" x="180.68053" height="11.085116" width="23.364111" id="18"
                 style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
 
-          <rect  style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="19"
+          <rect @click="clickEmplacement($event)" style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="19"
                  width="23.364111" height="11.085116" x="157.31642" y="255.74031" />
 
-          <rect y="255.74033" x="133.95232" height="11.085116" width="23.364111" id="20"
+          <rect @click="clickEmplacement($event)" y="255.74033" x="133.95232" height="11.085116" width="23.364111" id="20"
                 style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
         </g>
 
@@ -191,45 +193,45 @@
         <!-- 25 24 23 22 21 ... -->
         <g  id="g230" transform="matrix(0.67782228,0,0,0.91852108,-33.322393,-107.623)" style="fill:#ff9900">
 
-          <rect   style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="21" width="23.364111"
+          <rect  @click="clickEmplacement($event)" style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="21" width="23.364111"
                   height="11.085116" x="237.91287" y="255.71472" />
 
-          <rect y="255.71472" x="214.54877" height="11.085116" width="23.364111" id="22"
+          <rect @click="clickEmplacement($event)" y="255.71472" x="214.54877" height="11.085116" width="23.364111" id="22"
                 style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
 
-          <rect  y="255.71472" x="191.18466" height="11.085116" width="23.364111" id="23"
+          <rect @click="clickEmplacement($event)" y="255.71472" x="191.18466" height="11.085116" width="23.364111" id="23"
                  style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
 
-          <rect style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="24" width="23.364111"
+          <rect @click="clickEmplacement($event)" style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="24" width="23.364111"
                 height="11.085116" x="167.82056" y="255.71471" />
 
-          <rect y="255.74033" x="133.95232" height="11.085116" width="23.364111" id="25"
+          <rect @click="clickEmplacement($event)" y="255.74033" x="133.95232" height="11.085116" width="23.364111" id="25"
                 style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
         </g>
 
         <!-- Grande attraction haut gauche-->
-        <rect   id="26" width="22.101673" height="60.391205" x="11.109194" y="124.32918"
+        <rect @click="clickEmplacement($event)"  id="26" width="22.101673" height="60.391205" x="11.109194" y="124.32918"
               style="fill:#d40000;stroke:#000000;stroke-width:0.318789;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
 
         <!-- block de 5 stand vers la sortie parking droite-->
         <!--    28 29 30 31-->
         <!-- 27            -->
         <g  transform="matrix(0.67782228,0,0,0.91852108,-70.816205,-74.890469)" id="g1087" style="fill:#ffc022">
-          <rect  y="-169.10118" x="251.25786" height="11.085116" width="23.364111" id="27"
+          <rect @click="clickEmplacement($event)" y="-169.10118" x="251.25786" height="11.085116" width="23.364111" id="27"
                  style="fill:#ffc022;stroke:#000000;stroke-width:0.40414;stroke-linecap:butt;stroke-opacity:1;paint-order:normal"
                  transform="rotate(90)" />
 
-          <rect y="246.00369" x="169.26607" height="10.051865" width="21.912363" id="28"
+          <rect @click="clickEmplacement($event)" y="246.00369" x="169.26607" height="10.051865" width="21.912363" id="28"
                 style="fill:#ffc022;stroke:#000000;stroke-width:0.386766;stroke-opacity:1" />
 
-          <rect y="246.01869" x="191.18466" height="10.021854" width="23.364111" id="29"
+          <rect @click="clickEmplacement($event)" y="246.01869" x="191.18466" height="10.021854" width="23.364111" id="29"
                 style="fill:#ffc022;stroke:#000000;stroke-width:0.384269;stroke-opacity:1" />
 
-          <rect y="246.01869" x="214.54877" height="10.021864" width="23.385347" id="30"
+          <rect @click="clickEmplacement($event)" y="246.01869" x="214.54877" height="10.021864" width="23.385347" id="30"
                 style="fill:#ffc022;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" />
 
 
-          <rect  style="fill:#ffc022;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="31"
+          <rect @click="clickEmplacement($event)" style="fill:#ffc022;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="31"
                  width="23.385347" height="10.021864" x="237.93411" y="246.01869" />
         </g>
 
@@ -239,37 +241,37 @@
         <!--      39 38 37-->
         <g id="g196" transform="matrix(0.67782228,0,0,0.91852108,8.4393342,-74.890469)" style="fill:#ff9900">
 
-          <rect style="fill:#ff9900;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="32"
+          <rect @click="clickEmplacement($event)" style="fill:#ff9900;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="32"
                  width="23.385347" height="10.021864" x="144.39273" y="246.01869" />
 
-          <rect style="fill:#ff9900;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="33"
+          <rect @click="clickEmplacement($event)" style="fill:#ff9900;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="33"
             width="23.385347" height="10.021864" x="167.77808" y="246.01869" />
 
-          <rect style="fill:#ff9900;stroke:#000000;stroke-width:0.384269;stroke-opacity:1" id="34"
+          <rect @click="clickEmplacement($event)" style="fill:#ff9900;stroke:#000000;stroke-width:0.384269;stroke-opacity:1" id="34"
                 width="23.364111" height="10.021854" x="191.18466" y="246.01869" />
 
 
-          <rect style="fill:#ff9900;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="35"
+          <rect @click="clickEmplacement($event)" style="fill:#ff9900;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="35"
                 width="23.385347" height="10.021864" x="214.54877" y="246.01869" />
 
 
-          <rect  y="246.01869" x="237.93411" height="10.021864" width="23.385347" id="36"
+          <rect @click="clickEmplacement($event)" y="246.01869" x="237.93411" height="10.021864" width="23.385347" id="36"
             style="fill:#ff9900;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" />
 
-          <rect  style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="37" width="23.364111"
+          <rect @click="clickEmplacement($event)" style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" id="37" width="23.364111"
             height="11.085116" x="237.95535" y="256.04056" />
 
 
-          <rect  y="256.04056" x="214.54877" height="11.085116" width="23.364111" id="38"
+          <rect @click="clickEmplacement($event)" y="256.04056" x="214.54877" height="11.085116" width="23.364111" id="38"
             style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
 
-          <rect y="256.04056" x="191.18466" height="11.085116" width="23.364111" id="39"
+          <rect @click="clickEmplacement($event)" y="256.04056" x="191.18466" height="11.085116" width="23.364111" id="39"
                 style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
         </g>
 
 
         <!-- Grande attrac (dessus infirmerie)-->
-        <rect
+        <rect @click="clickEmplacement($event)"
             style="fill:#d40000;stroke:#000000;stroke-width:0.318789;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
             id="40" width="39.436573" height="27.973352" x="98.591972" y="170.47009" />
 
@@ -280,37 +282,37 @@
         <g id="g196-3" transform="matrix(0.67782228,0,0,0.91852108,8.4393258,-46.917109)" style="fill:#ff9900">
 
 
-          <rect style="fill:#ff9900;stroke:#000000;stroke-width:0.384269;stroke-opacity:1" id="41"
+          <rect @click="clickEmplacement($event)" style="fill:#ff9900;stroke:#000000;stroke-width:0.384269;stroke-opacity:1" id="41"
                 width="23.364111" height="10.021854" x="191.18466" y="243.3896" />
 
 
-          <rect  style="fill:#ff9900;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="42"
+          <rect @click="clickEmplacement($event)" style="fill:#ff9900;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" id="42"
                  width="23.385347" height="10.021864" x="214.54877" y="243.3896" />
 
 
-          <rect y="243.3896" x="237.93411" height="10.021864" width="23.385347" id="43"
+          <rect @click="clickEmplacement($event)" y="243.3896" x="237.93411" height="10.021864" width="23.385347" id="43"
                 style="fill:#ff9900;stroke:#000000;stroke-width:0.398957;stroke-opacity:1" />
 
 
 
-          <rect y="256.04056" x="191.18466" height="11.085116" width="23.364111" id="44"
+          <rect  @click="clickEmplacement($event)" y="256.04056" x="191.18466" height="11.085116" width="23.364111" id="44"
                 style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
 
 
 
-          <rect y="256.04056" x="214.54877" height="11.085116" width="23.364111" id="45"
+          <rect @click="clickEmplacement($event)" y="256.04056" x="214.54877" height="11.085116" width="23.364111" id="45"
                 style="fill:#ff9900;stroke:#000000;stroke-width:0.40414;stroke-opacity:1" />
 
         </g>
 
 
         <!-- Grande attrac (droite infirmerie)-->
-        <rect
+        <rect @click="clickEmplacement($event)"
             style="fill:#d40000;stroke:#000000;stroke-width:0.285669;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
             id="46" width="46.725662" height="18.958645" x="138.83957" y="204.53789" />
 
         <!-- stand nourriture droite infirmérie-->
-        <rect
+        <rect @click="clickEmplacement($event)"
           style="fill:#ff6600;stroke:#000000;stroke-width:0.318791;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
           y="-135.2205" x="205.48746" height="23.28339" width="18.171656" id="47"
           transform="matrix(0.00237638,0.99999718,-0.99998268,0.00588535,0,0)" />
@@ -418,8 +420,8 @@
 export default {
   name: "SVGMap",
   methods:{
-    test(){
-      alert("cc");
+    clickEmplacement(event){
+      this.$emit("StandClick",event.target)
     }
   }
 };

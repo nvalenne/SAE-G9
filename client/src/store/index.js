@@ -9,6 +9,7 @@ export default new Vuex.Store({
     attractions:[],
     prestataires:[],
     stands:[],
+    attractionMap:[],
   }),
   mutations: {
       setAttractionsContent(state, attractions){
@@ -20,11 +21,19 @@ export default new Vuex.Store({
       setStandsContent(state, stands){
         state.stands = stands
       },
+      setAttractionMapContent(state, attraction){
+        state.attractionMap = attraction;
+      },
   },
   actions: {
     async getAttractionsFromAPI(context) {
       let attractions = await axios.get('http://localhost:3000/attractions');
       context.commit('setAttractionsContent', attractions.data);
+    },
+
+    async getAttractionsFromAPIwithNumEmpla(context,id) {
+      let attractions = await axios.get('http://localhost:3000/attractions/'+id);
+      context.commit('setAttractionMapContent', attractions.data);
     },
 
     async getPrestatairesFromAPI(context){
