@@ -9,7 +9,7 @@ export default new Vuex.Store({
     attractions:[],
     prestataires:[],
     stands:[],
-    attractionMap:[],
+    attractionMap:null,
   }),
   mutations: {
       setAttractionsContent(state, attractions){
@@ -22,7 +22,7 @@ export default new Vuex.Store({
         state.stands = stands
       },
       setAttractionMapContent(state, attraction){
-        state.attractionMap = attraction;
+        state.attractionMap = attraction[0];
       },
   },
   actions: {
