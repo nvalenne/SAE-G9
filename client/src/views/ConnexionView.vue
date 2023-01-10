@@ -2,19 +2,25 @@
   <div id="app">
     <div id="connexion">
       <div style="width:40%">
-        <br>
+        <v-alert
+            type="error"
+            dense
+            v-if="error"
+        >
+          {{error}}
+        </v-alert>
         <v-card elevation="4" class="cardConnexion">
           <div class="headerConnexion" style="margin-bottom: 15px;">
             <img src="../assets/wheel.gif" style="width: 20%">
           </div>
           <div>
-            <v-form id="formConnexion" @submit="submitForm" action="/" method="post">
+            <div id="formConnexion" >
               <label for="username">Nom d'utilisateur</label>
               <v-text-field type="text" id="username" v-model="form.username"></v-text-field>
               <label for="password">Mot de passe</label>
               <v-text-field type="password" id="password" v-model="form.password"></v-text-field>
-              <v-btn color="success" type="submit">Se connecter</v-btn>
-            </v-form>
+              <v-btn color="success" @click="submitForm">Se connecter</v-btn>
+            </div>
           </div>
         </v-card>
       </div>
@@ -30,6 +36,7 @@
 <script>
 
 import axios from "axios";
+import {mapMutations} from "vuex";
 
 export default {
   name: 'ConnectionView',
@@ -41,14 +48,25 @@ export default {
       form: {
         username: '',
         password: ''
-      }
+      },
+      error:""
     }
   },
   methods: {
+    ...mapMutations(['setUserConnected']),
     submitForm() {
-      axios.post("https://localhost:3000/account/connexion", this.form)
-          .then((res) => console.log(res))
-      this.$router.push('/');
+      axios.post("http://localhost:3000/account/connexion", this.form)
+          .then((user) => {
+            console.log(user.data.data);
+            this.$cookie.set('userAuthentificated', JSON.stringify(user.data.data), 1);
+            this.setUserConnected(JSON.parse(this.$cookie.get('userAuthentificated')));
+            this.$router.push('/');
+          })
+          .catch((error) => {
+            this.error = "Nom d'utilisateur ou mot de passe incorrect";
+            console.log(error)
+          })
+
     }
   }
 }

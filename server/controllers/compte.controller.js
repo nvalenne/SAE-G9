@@ -1,4 +1,4 @@
-import {addAccountInDB} from "../services/compte.service.js";
+import {addAccountInDB, getAccountById, getAllAccounts} from "../services/compte.service.js";
 import bcrypt from "bcrypt";
 
 export const createAccount = (req, res) => {
@@ -15,17 +15,48 @@ export const createAccount = (req, res) => {
             addAccountInDB(username, hash, mail, nom, prenom, (err, result) => {
                 if (err) {
                     console.error(err)
-                    res.status(400).send({success: 1, content: err})
+                    res.status(400).send({success: 1, data: err});
                 } else {
-                    res.status(200).send({success: 0, content: `Utilisateur ajouté : ${result}`});
+                    res.status(200).send({success: 0, data: result});
                 }
             });
         }
     });
 }
 
+export const getAccountByID = (req, res) => {
+    let id = req.params.id;
+    getAccountById(id, (err, result) => {
+        if (err) {
+            console.error(err)
+            res.status(400).send({success: 1, data: err});
+        } else {
+            res.status(200).send({success: 0, data: result});
+        }
+    })
+}
+
 export const authentificate = (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
-    console.log("Créaton du cookie...");
+    let isValid = true;
+    getAllAccounts((err, users) => {
+        if (err) {
+            console.log(err)
+            return res.status(400).send({success: 1, data: err});
+        } else {
+            let user = users.find(user => user.username === username);
+            if (user.length === 0) isValid = false;
+            bcrypt.compare(password, user.password, (errCompare, result) => {
+                console.log("same : " + result);
+                if (errCompare || !result) {
+                    console.log(errCompare);
+                    res.status(404).send({success: 1, data: "Nom d'utilisateur ou mot de passe incorrect"});
+                }
+                else {
+                    res.status(200).send({success: 0, data: user})
+                }
+            });
+        }
+    })
 }

@@ -8,7 +8,7 @@ export const getAttractions = (req, res) =>{
         } else {
             res.status(200).send(result)
         }
-    }).then(r => console.log(r));
+    })
 }
 export const getAttractionByID = (req, res) => {
     let id = req.params.id;

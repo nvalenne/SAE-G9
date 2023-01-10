@@ -9,7 +9,7 @@ export const addAccountInDB = async (username, password, mail, nom, prenom, call
             role: 'utilisateur',
             prenom: prenom
         });
-        return callback(null, user);
+        return callback(null, user.dataValues);
     } catch (e){
         return callback(e, []);
     }
@@ -18,6 +18,19 @@ export const addAccountInDB = async (username, password, mail, nom, prenom, call
 export const getAllAccounts = async (callback) => {
     try {
         const users = await db.compte.findAll();
+        return callback(null, users);
+    } catch (e) {
+        return callback((e, []));
+    }
+}
+
+export const getAccountById = async (id, callback) => {
+    try {
+        const users = await db.compte.findAll({
+            where:{
+                id: id
+            }
+        });
         return callback(null, users);
     } catch (e) {
         return callback((e, []));

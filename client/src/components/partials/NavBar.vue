@@ -28,7 +28,7 @@
             <transition name="fade" apear>
               <div class="sub-menu" v-if="isOpen">
                 <div class="menu-item">
-                  <router-link to="/liste_manege">Liste des manèges</router-link>
+                  <router-link to="/liste_manege">Liste des manèges/stands</router-link>
                 </div>
                 <div class="menu-item">
                   <router-link to="/liste_prestataire">Liste des prestataires</router-link>
@@ -42,13 +42,17 @@
           </router-link>
         </div>
         <div class="col-2 navbar">
-          <router-link to="/connexion" class="connexion">
+          <router-link to="/connexion" class="connexion" v-if="!userConnected">
             <span class="accountIcon">
-              <v-icon size="36" color="white">mdi-account-circle</v-icon>
-              <span>Se connecter</span>
-              <!--AFFICHER NOM DU COMPTE LORSQUE CONNEXION-->
+                <v-icon size="36" color="white">mdi-account-circle</v-icon>
+                <span>Se connecter</span>
             </span>
           </router-link>
+          <a class="accountIcon" @click="logout" v-else>
+            {{userConnected.prenom}}
+            <v-icon size="36" color="white">mdi-logout</v-icon>
+          </a>
+
         </div>
       </v-row>
     </nav>
@@ -56,11 +60,24 @@
 </template>
 
 <script>
+
+import {mapMutations, mapState} from "vuex";
+
 export default {
   name: "NavBar",
   data: () => ({
     isOpen : false
-  })
+  }),
+  computed:{
+    ...mapState(['userConnected']),
+  },
+  methods: {
+    ...mapMutations(['setUserConnected']),
+    logout(){
+      this.$cookie.delete('userAuthentificated');
+      this.setUserConnected('')
+    }
+  }
 };
 </script>
 

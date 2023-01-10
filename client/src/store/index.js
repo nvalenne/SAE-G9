@@ -10,6 +10,7 @@ export default new Vuex.Store({
     prestataires:[],
     stands:[],
     attractionMap:null,
+    userConnected:{}
   }),
   mutations: {
       setAttractionsContent(state, attractions){
@@ -24,6 +25,9 @@ export default new Vuex.Store({
       setAttractionMapContent(state, attraction){
         state.attractionMap = attraction[0];
       },
+      setUserConnected(state, user){
+        state.userConnected = user;
+      }
   },
   actions: {
     async getAttractionsFromAPI(context) {
