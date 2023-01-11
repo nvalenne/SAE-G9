@@ -12,6 +12,7 @@ import prestataire_router from "./routers/prestataire.router.js";
 import attraction_router from "./routers/attraction.router.js";
 import compte_router from "./routers/compte.router.js";
 import stand_router from "./routers/stand.router.js";
+import billet_router from "./routers/billet.router.js";
 //
 
 
@@ -53,6 +54,7 @@ app.use("/account", compte_router);
 app.use("/prestataires", prestataire_router);
 app.use("/attractions", attraction_router);
 app.use("/stands", stand_router);
+app.use("/billets", billet_router);
 app.use("/api-docs", swagger_ui.serve, swagger_ui.setup(swaggerJsDoc(swagger_options)));
 
 app.listen(port, () => {

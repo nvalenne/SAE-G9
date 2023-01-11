@@ -7,8 +7,8 @@ export const Billet = (sequelize) => {
             autoIncrement: true,
             primaryKey: true
         },
-        dateBillet: {
-            field: 'dateBillet',
+        date_billet: {
+            field: 'datebillet',
             type: DataType.DATEONLY
         },
         prix: {
