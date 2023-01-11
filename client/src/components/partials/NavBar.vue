@@ -28,10 +28,10 @@
             <transition name="fade" apear>
               <div class="sub-menu" v-if="isOpen">
                 <div class="menu-item">
-                  <router-link to="/liste_manege">Liste des manèges/stands</router-link>
+                  <router-link to="/maneges">Liste des manèges/stands</router-link>
                 </div>
                 <div class="menu-item">
-                  <router-link to="/liste_prestataire">Liste des prestataires</router-link>
+                  <router-link to="/prestataires">Liste des prestataires</router-link>
                 </div>
               </div>
             </transition>
@@ -39,6 +39,10 @@
           <router-link to="/contact">
             <v-icon size="24" color="white">mdi-email</v-icon>
             <span>Nous contacter</span>
+          </router-link>
+          <router-link to="/livre_d_or">
+            <v-icon size="24" color="white">mdi-comment</v-icon>
+            <span>Livre d'or</span>
           </router-link>
         </div>
         <div class="col-2 navbar">
@@ -52,7 +56,6 @@
             {{userConnected.prenom}}
             <v-icon size="36" color="white">mdi-logout</v-icon>
           </a>
-
         </div>
       </v-row>
     </nav>

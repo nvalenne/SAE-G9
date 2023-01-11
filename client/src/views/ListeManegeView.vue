@@ -1,5 +1,5 @@
 <script>
-import {mapState} from 'vuex';
+import { mapState} from 'vuex';
 export default {
   name: 'ListeManegeView',
   metaInfo: {
@@ -40,15 +40,13 @@ export default {
   <div id="app">
     <v-container>
       <v-row>
+        <router-view></router-view>
+      </v-row>
+      <v-row>
         <div class="col-6">
           <div class="accueil">
             <h1>Liste des manèges</h1>
           </div>
-          <v-btn depressed color="primary">
-            <router-link to="/modifier_manege">
-              <span class="boutton">Modifier</span>
-            </router-link>
-          </v-btn>
           <v-app id="inspire">
             <v-text-field
                 style="width: 50%;max-height: 32px;margin-bottom: 30px;"
@@ -58,7 +56,7 @@ export default {
             ></v-text-field>
             <div>
               <div v-for="(attraction, index) in filterSearch" :key="index">
-                <a @click="$router.push(`/liste_manege/${attraction.id_attraction}`)">
+                <div>
                   <v-card elevation="4" class="mb-3">
                     <v-card-title>{{attraction.nom.toUpperCase()}}</v-card-title>
                     <v-card-text>
@@ -72,9 +70,14 @@ export default {
                       <span>Temps d'attente : {{attraction.attente}} min</span><br>
                       <span>Prix enfant : {{attraction.prix_enfant}}€   -   </span>
                       <span>Prix adulte : {{attraction.prix_adulte}}€</span>
+                      <div>
+                        <router-link :to="{name:'manege', params:{id:attraction.id_attraction}}">
+                          <v-btn depressed color="primary">Modifier</v-btn>
+                        </router-link>
+                      </div>
                     </v-card-text>
                   </v-card>
-                </a>
+                </div>
               </div>
             </div>
           </v-app>
@@ -83,11 +86,6 @@ export default {
           <div class="accueil">
             <h1>Liste des stands</h1>
           </div>
-          <v-btn depressed color="primary">
-            <router-link to="/modifier_stand">
-              <span class="boutton">Modifier</span>
-            </router-link>
-          </v-btn>
           <v-app id="inspire">
             <v-text-field
                 style="width: 50%;max-height: 32px;margin-bottom: 30px;"
@@ -97,7 +95,7 @@ export default {
             ></v-text-field>
             <div>
               <div v-for="(stand, index) in filterSearch2" :key="index">
-                <a @click="$router.push(`/liste_manege/${stand.id_stand}`)">
+                <div>
                   <v-card elevation="4" class="mb-3">
                     <v-card-title>{{stand.nom.toUpperCase()}}</v-card-title>
                     <v-card-text>
@@ -109,9 +107,14 @@ export default {
                       <span>Type de stand : {{stand.type_stand.designation}}</span><br>
                       <span>Temps d'attente : {{stand.attente}} min</span><br>
                       <span>Prix : {{stand.prix}}€</span>
+                      <div>
+                        <router-link :to="{name:'prestataire', params:{id:stand.id_stand}}">
+                          <v-btn depressed color="primary">Modifier</v-btn>
+                        </router-link>
+                      </div>
                     </v-card-text>
                   </v-card>
-                </a>
+                </div>
               </div>
             </div>
 
@@ -123,9 +126,6 @@ export default {
 </template>
 
 <style scoped>
-  .boutton{
-    color: white;
-  }
   a {
     text-decoration: none;
   }

@@ -38,7 +38,7 @@ const swagger_options = {
             version: "1.0"
         }
     },
-    apis: ["server.js", "./routes/*.js"]
+    apis: ["server.js", "./routers/*.js"]
 };
 
 const corsOptions = {

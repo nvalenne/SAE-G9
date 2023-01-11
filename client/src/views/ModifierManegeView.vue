@@ -2,7 +2,7 @@
   <div class="app">
     <div>
       <v-btn depressed color="primary">
-        <router-link to="/liste_manege">
+        <router-link to="/maneges">
           <span class="boutton">Retour à la liste des manèges</span>
         </router-link>
       </v-btn>

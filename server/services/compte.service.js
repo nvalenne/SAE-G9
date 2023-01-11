@@ -20,6 +20,7 @@ export const getAllAccounts = async (callback) => {
         const users = await db.compte.findAll();
         return callback(null, users);
     } catch (e) {
+        console.error(e);
         return callback((e, []));
     }
 }

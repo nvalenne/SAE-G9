@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import ModifierManegeView from "@/views/ModifierManegeView.vue";
-import ModifierPrestataireView from "@/views/ModifierPrestataireView";
+import $cookie from "vue-cookie";
 Vue.use(VueRouter);
 
 const routes = [
@@ -30,7 +29,7 @@ const routes = [
     },
   },
   {
-    path: '/liste_manege',
+    path: '/maneges',
     name: 'ListeManegeView',
     component: () => import("@/views/ListeManegeView"),
     meta: {
@@ -40,23 +39,16 @@ const routes = [
       {
         path: ':id',
         name: 'manege',
-        component: ModifierManegeView,
+        component: () => import("@/views/ModifierManegeView"),
         meta: {
-          authRequired: true
+          authRequired: true,
+          rolePermission: ["prestataire"],
         },
       }
     ]
   },
   {
-    path: '/modifier_manege',
-    name: 'ModifierManegeView',
-    component: ModifierManegeView,
-    meta: {
-      authRequired: true
-    },
-  },
-  {
-    path: '/liste_prestataire',
+    path: '/prestataires',
     name: 'ListePrestataireView',
     component: () => import("@/views/ListePrestataireView"),
     meta: {
@@ -66,12 +58,21 @@ const routes = [
       {
         path: ':id',
         name: 'prestataire',
-        component: ModifierPrestataireView,
+        component: () => import("@/views/ModifierPrestataireView"),
         meta: {
-          authRequired: true
+          authRequired: true,
+          rolePermission: ["prestataire"]
         },
       }
     ]
+  },
+  {
+    path: '/livre_d_or',
+    name: 'livre_d_or',
+    component: () => import('@/views/LivreOrView'),
+    meta: {
+      authRequired: false
+    }
   },
   {
     path: '/connexion',
@@ -98,8 +99,16 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  let user = JSON.parse($cookie.get('userAuthentificated'));
   if (to.meta.authRequired){
     console.log("authentification necessaire");
+    if (!to.meta.rolePermission.includes(user.role)){
+      next("/connexion");
+    } else {
+      console.log("Permission accepted");
+      next();
+    }
+
   }
   next();
 })

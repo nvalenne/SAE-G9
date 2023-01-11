@@ -57,14 +57,14 @@ export default {
     submitForm() {
       axios.post("http://localhost:3000/account/connexion", this.form)
           .then((user) => {
-            console.log(user.data.data);
+            //console.log(user.data.data);
             this.$cookie.set('userAuthentificated', JSON.stringify(user.data.data), 1);
             this.setUserConnected(JSON.parse(this.$cookie.get('userAuthentificated')));
             this.$router.push('/');
           })
           .catch((error) => {
-            this.error = "Nom d'utilisateur ou mot de passe incorrect";
-            console.log(error)
+            this.error = error.response.status + " : " + error.response.data.data;
+            //console.log(error)
           })
 
     }

@@ -41,17 +41,18 @@ export const authentificate = (req, res) => {
     let password = req.body.password;
     let isValid = true;
     getAllAccounts((err, users) => {
+        let user = users.find(user => user.username === username);
         if (err) {
-            console.log(err)
+            console.error(err)
             return res.status(400).send({success: 1, data: err});
+        } else if (user===undefined){
+            return res.status(404).send({success: 1, data: "Nom d'utilisateur ou mot de passe incorrect"});
         } else {
-            let user = users.find(user => user.username === username);
-            if (user.length === 0) isValid = false;
             bcrypt.compare(password, user.password, (errCompare, result) => {
                 console.log("same : " + result);
                 if (errCompare || !result) {
-                    console.log(errCompare);
-                    res.status(404).send({success: 1, data: "Nom d'utilisateur ou mot de passe incorrect"});
+                    console.error(errCompare);
+                    res.status(400).send({success: 1, data: errCompare});
                 }
                 else {
                     res.status(200).send({success: 0, data: user})
