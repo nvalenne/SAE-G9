@@ -49,7 +49,7 @@ const corsOptions = {
 }
 app.use(cors(corsOptions))
 
-app.use("/formulairecontact", formulaire_router);
+app.use("/formulaires", formulaire_router);
 app.use("/account", compte_router);
 app.use("/prestataires", prestataire_router);
 app.use("/attractions", attraction_router);
