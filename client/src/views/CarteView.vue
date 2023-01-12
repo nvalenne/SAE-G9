@@ -5,16 +5,19 @@
     </div>
     <div v-if="actractionisNull" style="margin-left: 20px;margin-top: 20px">
       <v-card elevation="4">
-        <h2>{{attractionNom}}</h2>
-        <br>
-        <label>{{attractionPrix}}</label>
-        <br>
-
-        <label>{{attractionTaille}}</label>
-        <br>
-
-        <label>{{attractionAttente}}</label>
-        <br>
+        <v-card-title>{{attractionNom}}</v-card-title>
+        <v-img
+            max-width="200px"
+            src="https://www.petitfute.com/medias/mag/12133/835/8896-les-10-parcs-d-attraction.jpg">
+        </v-img>
+        <v-card-text>
+          <label>{{attractionPrix}}</label>
+          <br>
+          <label>{{attractionTaille}}</label>
+          <br>
+          <label>{{attractionAttente}}</label>
+          <br>
+        </v-card-text>
 
         <!-- Si il est admin rajouter des infos + bouton pour modifier ?
         <div v-if="admin">
@@ -50,7 +53,7 @@ export default {
       return this.attractionMap !=null
     },
     attractionNom(){
-      return this.attractionMap.nom;
+      return this.attractionMap.nom.toUpperCase();
     },
     attractionPrix(){
       let prixA = this.attractionMap.prix_adulte;

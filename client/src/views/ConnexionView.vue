@@ -16,9 +16,9 @@
           <div>
             <div id="formConnexion" >
               <label for="username">Nom d'utilisateur</label>
-              <v-text-field type="text" id="username" v-model="form.username"></v-text-field>
+              <v-text-field type="text" id="username" v-model="form.username" required></v-text-field>
               <label for="password">Mot de passe</label>
-              <v-text-field type="password" id="password" v-model="form.password"></v-text-field>
+              <v-text-field type="password" id="password" v-model="form.password" required></v-text-field>
               <v-btn color="success" @click="submitForm">Se connecter</v-btn>
             </div>
           </div>

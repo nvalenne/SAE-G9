@@ -25,16 +25,6 @@
                   fill="#FFF"></path>
               </svg>
             </a>
-            <transition name="fade" apear>
-              <div class="sub-menu" v-if="isOpen">
-                <div class="menu-item">
-                  <router-link to="/maneges">Liste des manèges/stands</router-link>
-                </div>
-                <div class="menu-item">
-                  <router-link to="/prestataires">Liste des prestataires</router-link>
-                </div>
-              </div>
-            </transition>
           </div>
           <router-link to="/contact">
             <v-icon size="24" color="white">mdi-email</v-icon>
@@ -59,6 +49,17 @@
         </div>
       </v-row>
     </nav>
+    <nav class="sub-menu-listes" v-if="isOpen">
+        <div class="menu-item">
+          <router-link to="/maneges">Liste des manèges</router-link>
+        </div>
+        <div class="menu-item">
+          <router-link to="/prestataires">Liste des prestataires</router-link>
+        </div>
+        <div class="menu-item">
+          <router-link to="/stands">Liste des stands</router-link>
+        </div>
+    </nav>
   </div>
 </template>
 
@@ -73,6 +74,9 @@ export default {
   }),
   computed:{
     ...mapState(['userConnected']),
+  },
+  created() {
+    this.isOpen=false;
   },
   methods: {
     ...mapMutations(['setUserConnected']),
@@ -91,6 +95,12 @@ nav {
   padding: 10px;
   background-color: rgb(29, 28, 27);
   transition: all .2s ease-in-out;
+}
+
+.sub-menu-listes {
+  display: flex;
+  text-align: center;
+  background-color: rgb(43, 42, 40);
 }
 
 nav text {

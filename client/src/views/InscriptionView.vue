@@ -10,17 +10,17 @@
                 <v-form id="formInscription" @submit="submitForm" action="/" method="post">
                   <v-col cols="6">
                     <label for="nom">Nom</label>
-                    <v-text-field type="text" id="nom" v-model="form.nom"></v-text-field>
+                    <v-text-field type="text" id="nom" v-model="form.nom" required></v-text-field>
                     <label for="prenom">Prénom</label>
-                    <v-text-field type="text" id="prenom" v-model="form.prenom"></v-text-field>
+                    <v-text-field type="text" id="prenom" v-model="form.prenom" required></v-text-field>
                     <label for="email">Adresse Email</label>
-                    <v-text-field type="text" id="email" v-model="form.mail"></v-text-field>
+                    <v-text-field type="text" id="email" v-model="form.mail" required></v-text-field>
                   </v-col>
                   <v-col cols="6">
                     <label for="username">Nom d'utilisateur</label>
-                    <v-text-field type="text" id="username" v-model="form.username"></v-text-field>
+                    <v-text-field type="text" id="username" v-model="form.username" required></v-text-field>
                     <label for="password">Mot de passe</label>
-                    <v-text-field type="password" id="password" v-model="form.password"></v-text-field>
+                    <v-text-field type="password" id="password" v-model="form.password" required></v-text-field>
                   </v-col>
                   <v-btn color="success" type="submit" >S'inscrire</v-btn>
                 </v-form>

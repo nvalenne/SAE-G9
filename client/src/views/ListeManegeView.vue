@@ -8,7 +8,7 @@ export default {
   data () {
     return {
       search: '',
-      search2: '',
+      attractionSelected:{}
     }
   },
   computed:{
@@ -20,18 +20,14 @@ export default {
         return filter;
       else return this.attractions;
     },
-    ...mapState(['stands']),
-    filterSearch2() {
-      let filter = this.stands.filter(stand => stand.nom.includes(this.search2));
-      //console.log(Array.isArray(this.attractions), this.attractions);
-      if (filter.length !== 0)
-        return filter;
-      else return this.stands;
-    },
   },
   created() {
     this.$store.dispatch('getAttractionsFromAPI');
-    this.$store.dispatch('getStandsFromAPI');
+  },
+  methods:{
+    saveAttractionSelected(attraction){
+      this.attractionSelected = attraction;
+    }
   }
 }
 </script>
@@ -39,9 +35,6 @@ export default {
 <template>
   <div id="app">
     <v-container>
-      <v-row>
-        <router-view></router-view>
-      </v-row>
       <v-row>
         <div class="col-6">
           <div class="accueil">
@@ -71,7 +64,7 @@ export default {
                       <span>Prix enfant : {{attraction.prix_enfant}}€   -   </span>
                       <span>Prix adulte : {{attraction.prix_adulte}}€</span>
                       <div>
-                        <router-link :to="{name:'manege', params:{id:attraction.id_attraction}}">
+                        <router-link :to="{name:'manege', params:{id:attraction.id_attraction}}" @click="saveAttractionSelected(attraction)">
                           <v-btn depressed color="primary">Modifier</v-btn>
                         </router-link>
                       </div>
@@ -83,42 +76,7 @@ export default {
           </v-app>
         </div>
         <div class="col-6">
-          <div class="accueil">
-            <h1>Liste des stands</h1>
-          </div>
-          <v-app id="inspire">
-            <v-text-field
-                style="width: 50%;max-height: 32px;margin-bottom: 30px;"
-                v-model="search2"
-                append-icon="mdi-magnify"
-                label="Recherche"
-            ></v-text-field>
-            <div>
-              <div v-for="(stand, index) in filterSearch2" :key="index">
-                <div>
-                  <v-card elevation="4" class="mb-3">
-                    <v-card-title>{{stand.nom.toUpperCase()}}</v-card-title>
-                    <v-card-text>
-                      <v-img
-                          max-width="200px"
-                          src="https://www.animation-evenement-ville.fr/wp-content/uploads/2020/11/LE-CHAMBOULTOUT-FORAIN-VIGNETTE-SITE.jpg"
-                      ></v-img>
-                      <span>Propriétaire : {{stand.compte.nom}} {{stand.compte.prenom}}</span><br>
-                      <span>Type de stand : {{stand.type_stand.designation}}</span><br>
-                      <span>Temps d'attente : {{stand.attente}} min</span><br>
-                      <span>Prix : {{stand.prix}}€</span>
-                      <div>
-                        <router-link :to="{name:'prestataire', params:{id:stand.id_stand}}">
-                          <v-btn depressed color="primary">Modifier</v-btn>
-                        </router-link>
-                      </div>
-                    </v-card-text>
-                  </v-card>
-                </div>
-              </div>
-            </div>
-
-          </v-app>
+          <router-view :attraction="attractionSelected"></router-view>
         </div>
       </v-row>
     </v-container>
