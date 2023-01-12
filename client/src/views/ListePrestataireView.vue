@@ -58,3 +58,9 @@ export default {
       </v-container>
   </div>
 </template>
+
+<style scoped>
+  div{
+    max-width: 500px;
+  }
+</style>

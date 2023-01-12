@@ -186,8 +186,8 @@ INSERT INTO type_attraction (designation) VALUES
 INSERT INTO compte (identifiant, mdp, mail, nom, role, prenom) VALUES
 ('user','$2b$10$/9bT6IFfv35nHgAxfC22N.S7YpC3nU55EV3kCwve3bi4FUj4xdoWu','user@quoi.feur','Jean','utilisateur','utilisateur'),
 ('admin','$2b$10$MN5HOyKBec2LzGDY1d9EqOVEoV5s5EMRzy3UHZOXM1/4/aI5FxYi2','admin@quoi.feur','Philippe','admin','admin'),
-('prestataire','$2b$10$yY6lKGQ7aS9ez8qqDDyFuON2N8u6WofNLLDM05j0HbfAY7/bAK9Uy','prestataire@quoi.feur','Jacques','prestataire','prestataire'),
-('prestataire2','$2b$10$SXPED39XyINHvR0lObhWlutmM/8.5jqt1XffxtyyWNLvqvYw9sXuK', 'michel.drucker@quoi.feur', 'Drucker', 'prestataire', 'Michel');
+('prestataire','$2b$10$yY6lKGQ7aS9ez8qqDDyFuON2N8u6WofNLLDM05j0HbfAY7/bAK9Uy','prestataire@gmail.com','Jacques','prestataire','prestataire'),
+('prestataire2','$2b$10$SXPED39XyINHvR0lObhWlutmM/8.5jqt1XffxtyyWNLvqvYw9sXuK', 'michel.drucker@gmail.com', 'Drucker', 'prestataire', 'Michel');
 
 INSERT INTO service (nom_service) VALUES
 ('prix à gagner'),
