@@ -184,12 +184,10 @@ INSERT INTO type_attraction (designation) VALUES
 ('bulles sur eau');
 
 INSERT INTO compte (identifiant, mdp, mail, nom, role, prenom) VALUES
-('admin1','1234','admin1@gmail.com','Jean','admin','Michel'),
-('admin2','abcd','admin2@gmail.com','Philippe','admin','Martin'),
-('prestataire1','1234','prestataire1@gmail.com','Jacques','prestataire','Max'),
-('prestataire2','abcd','prestataire2@gmail.com','Elizabeth','prestataire','Carl'),
-('prestataire3','1234','prestataire3@gmail.com','Ryan','prestataire','Poupou'),
-('prestataire4','abcd','prestataire4@gmail.com','Steven','prestataire','I');
+('user','$2b$10$/9bT6IFfv35nHgAxfC22N.S7YpC3nU55EV3kCwve3bi4FUj4xdoWu','user@quoi.feur','Jean','utilisateur','utilisateur'),
+('admin','$2b$10$MN5HOyKBec2LzGDY1d9EqOVEoV5s5EMRzy3UHZOXM1/4/aI5FxYi2','admin@quoi.feur','Philippe','admin','admin'),
+('prestataire','$2b$10$yY6lKGQ7aS9ez8qqDDyFuON2N8u6WofNLLDM05j0HbfAY7/bAK9Uy','prestataire@quoi.feur','Jacques','prestataire','prestataire'),
+('prestataire2','$2b$10$SXPED39XyINHvR0lObhWlutmM/8.5jqt1XffxtyyWNLvqvYw9sXuK', 'michel.drucker@quoi.feur', 'Drucker', 'prestataire', 'Michel');
 
 INSERT INTO service (nom_service) VALUES
 ('prix à gagner'),
@@ -209,15 +207,15 @@ INSERT INTO attraction(nom, prix_adulte, prix_enfant
                         , id_emplacement) VALUES
 ('dégueulator',10,8,1.3,0,0,0,7,3,1),
 ('space mountains',10,8,1.3,0.,0,0,1,3,2),
-('rapide et furieux',10,8,1.3,0,0,0,1,4,3),
-('splash',10,8,1.3,0,0,0,3,5,4),
-('Spaceglider',10,8,1.3,0,0,0,6,6,5);
+('rapide et furieux',10,8,1.3,0,0,0,1,3,3),
+('splash',10,8,1.3,0,0,0,3,4,4),
+('Spaceglider',10,8,1.3,0,0,0,6,4,5);
 
 INSERT INTO stand (nom, prix, recette, nbr_clients_total, attente, id_type_stand, id_compte, id_emplacement) VALUES
 ('canards',10,0,0,0,1,3,6),
 ('carabine',10,0,0,0,1,3,7),
-('basket',10,0,0,0,1,4,8),
-('I',0,0,0,0,2,4,9);
+('basket',10,0,0,0,1,3,8),
+('I',0,0,0,0,2,3,9);
 
 INSERT INTO menu(id_stand,id_produit) VALUES
 (4,1),
