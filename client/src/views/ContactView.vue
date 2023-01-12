@@ -8,7 +8,7 @@
           Votre demande sera traitée sera dans les plus brefs délais.
         </v-card-text>
         <div>
-          <v-form class="contactForm" @submit="submitForm" action="/" method="post">
+          <div>
             <label for="email">Adresse mail</label>
             <v-text-field type="text" id="email" v-model="form.email"></v-text-field>
             <label for="prenom">Prénom</label>
@@ -18,8 +18,8 @@
             <label for="email">Message</label>
             <v-textarea type="text" id="message" v-model="form.message"></v-textarea>
 
-            <v-btn color="success" type="submit">Envoyer</v-btn>
-          </v-form>
+            <v-btn color="success" @click="submitForm">Envoyer</v-btn>
+          </div>
         </div>
       </v-card>
     </div>
@@ -46,7 +46,7 @@ export default {
   },
   methods : {
     submitForm(){
-      axios.post('http://localhost:3000/formulairecontact', this.form)
+      axios.post('http://localhost:3000/formulaires/contact', this.form)
           .then((res) => console.log(res))
       this.$router.push('/')
     }

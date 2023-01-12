@@ -8,6 +8,8 @@
           <label for="email">Message</label>
           <v-textarea type="text" id="message" v-model="form.message"></v-textarea>
 
+          <v-text-field></v-text-field>
+
           <v-btn color="success" type="submit">Envoyer</v-btn>
         </v-form>
       </div>
@@ -32,6 +34,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .main-title{
   font-size: 7em;
