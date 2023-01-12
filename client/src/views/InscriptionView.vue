@@ -68,8 +68,8 @@ export default {
       axios.post('http://localhost:3000/account/inscription', this.form)
           .then((res) => {
             console.log(res);
-            this.$router.push('/')
           })
+          .then(()=>this.$router.push('/'))
           .catch((error) => {
             this.error = error.response.status + " : " + error.response.data.err;
             console.log(error)
