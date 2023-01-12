@@ -97,6 +97,14 @@ const routes = [
     meta: {
       authRequired: false
     },
+  },
+  {
+    path: '/mes_billets',
+    name: 'mesBilletsView',
+    component: () => import("@/views/MesBillets.vue"),
+    meta: {
+      authRequired: false
+    },
   }
 ]
 

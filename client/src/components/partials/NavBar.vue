@@ -34,6 +34,10 @@
             <v-icon size="24" color="white">mdi-comment</v-icon>
             <span>Livre d'or</span>
           </router-link>
+          <router-link to="/mes_billets" v-if="userConnected">
+            <v-icon size="24" color="white">mdi-comment</v-icon>
+            <span>Mes billets</span>
+          </router-link>
         </div>
         <div class="col-2 navbar">
           <router-link to="/connexion" class="connexion" v-if="!userConnected">

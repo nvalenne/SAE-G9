@@ -10,7 +10,8 @@ export default new Vuex.Store({
     prestataires:[],
     stands:[],
     attractionMap:null,
-    userConnected:{}
+    userConnected:{},
+      billets:[]
   }),
   mutations: {
       setAttractionsContent(state, attractions){
@@ -27,6 +28,9 @@ export default new Vuex.Store({
       },
       setUserConnected(state, user){
         state.userConnected = user;
+      },
+      setBilletsUser(state, billets){
+          state.billets = billets;
       }
   },
   actions: {
@@ -49,6 +53,12 @@ export default new Vuex.Store({
       let stands = await axios.get('http://localhost:3000/stands');
       context.commit('setStandsContent', stands.data);
     },
+
+      async getBilletsByCompte(context){
+        let id = this.state.userConnected.id;
+          let billets = await axios.get('http://localhost:3000/billets/'+id);
+          context.commit('setBilletsUser', billets.data);
+      },
   },
   modules: {
   }
