@@ -48,8 +48,16 @@ const routes = [
     ]
   },
   {
+    path: '/stands',
+    name:'stands',
+    component: () => import('@/views/ListeStands'),
+    meta: {
+      authRequired: false
+    }
+  },
+  {
     path: '/prestataires',
-    name: 'ListePrestataireView',
+    name: 'prestataires',
     component: () => import("@/views/ListePrestataireView"),
     meta: {
       authRequired: false
@@ -102,7 +110,10 @@ router.beforeEach((to, from, next) => {
   let user = JSON.parse($cookie.get('userAuthentificated'));
   if (to.meta.authRequired){
     console.log("authentification necessaire");
-    if (!to.meta.rolePermission.includes(user.role)){
+    if (user===null){ // Si aucune authentification
+      next("/connexion");
+    }
+    if (!to.meta.rolePermission.includes(user.role)){ // Si personne authentifié n'a pas les permissions de la page
       next("/connexion");
     } else {
       console.log("Permission accepted");
