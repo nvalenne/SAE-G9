@@ -56,14 +56,6 @@ CREATE TABLE produit(
    PRIMARY KEY(id_produit)
 );
 
-CREATE TABLE billet(
-    id_billet SERIAL,
-    dateBillet DATE,
-    prix SMALLINT,
-    id_compte INTEGER NOT NULL,
-    PRIMARY KEY (id_billet),
-    FOREIGN KEY (id_compte) REFERENCES compte(id_compte) ON DELETE CASCADE ON UPDATE CASCADE
-);
 
 CREATE TABLE attraction(
    id_attraction SERIAL,
@@ -97,6 +89,16 @@ CREATE TABLE stand(
    FOREIGN KEY(id_compte) REFERENCES compte(id_compte) ON DELETE CASCADE ON UPDATE CASCADE,
    FOREIGN KEY(id_emplacement) REFERENCES emplacement(id_emplacement) ON DELETE CASCADE ON UPDATE CASCADE,
    PRIMARY KEY(id_stand)
+);
+
+CREATE TABLE billet(
+    id_billet SERIAL,
+    dateBillet DATE,
+    prix SMALLINT,
+    id_compte INTEGER NOT NULL,
+    id_attraction INTEGER,
+    PRIMARY KEY (id_billet),
+    FOREIGN KEY (id_compte) REFERENCES compte(id_compte) ON DELETE CASCADE ON UPDATE CASCADE 
 );
 
 CREATE TABLE service_stand(
