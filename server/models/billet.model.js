@@ -14,6 +14,10 @@ export const Billet = (sequelize) => {
         prix: {
             field: 'prix',
             type: DataType.SMALLINT
+        },
+        id_attraction: {
+            field: 'id_attraction',
+            type: DataType.SMALLINT
         }
     }, {
         tableName: 'billet',
