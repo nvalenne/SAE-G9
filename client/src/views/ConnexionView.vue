@@ -63,7 +63,7 @@ export default {
             this.$router.push('/');
           })
           .catch((error) => {
-            this.error = error.response.status + " : " + error.response.data.data;
+            this.error = error.response.status + " : " + error.response.data.err;
             //console.log(error)
           })
 

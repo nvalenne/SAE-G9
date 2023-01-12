@@ -14,7 +14,7 @@ export const inscriptionValidation = (req, res, next) => {
             let isValid = true;
             let errorMsg;
             if (!username || !mdp || !mail || !nom || !prenom){
-                errorMsg = "Une des informations est manquante";
+                errorMsg = "Une ou plusieurs informations sont manquantes";
                 isValid = false;
             }
             for (let i = 0; i < users.length; i++) {
@@ -26,7 +26,7 @@ export const inscriptionValidation = (req, res, next) => {
             }
             console.log("validated : " + isValid);
             if (!isValid){
-                res.status(400).send({success:1, data:errorMsg});
+                res.status(400).send({success:0, err:errorMsg});
             } else {
                 next();
             }

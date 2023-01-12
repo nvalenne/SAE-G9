@@ -1,5 +1,12 @@
 <template>
     <div class="livre_or">
+      <v-alert
+          type="error"
+          dense
+          v-if="error"
+      >
+        {{error}}
+      </v-alert>
       <span class="main-title">Livre d'or</span>
       <div>
         <v-form class="contactForm" action="/" method="post">
@@ -24,14 +31,21 @@ export default {
       form: {
         nom:'',
         message:''
-      }
+      },
+      error:''
     }
   },
   methods:{
     submitForm(){
       axios.post('http://localhost:3000/formulaires/avis-livre-d-or', this.form)
-          .then((res) => console.log(res.data))
-      this.$router.push('/');
+          .then((comment) => {
+            console.log(comment)
+            this.$router.push('/');
+          })
+          .catch((error) => {
+            this.error = error.response.status + " : " + error.response.data.err;
+            console.log(error)
+          })
     }
   }
 }

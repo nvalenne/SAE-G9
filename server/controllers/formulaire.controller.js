@@ -19,13 +19,17 @@ export const createFormulaireContact = (req, res) => {
 export const createAvisLivreOr = (req, res) => {
     let message = req.body.message;
     let nom =  req.body.nom;
-    addCommentInDb(nom, message)
-        .then(comment => {
-            return res.status(200).send({success:1, data: comment});
-        })
-        .catch(error => {
-            return res.status(500).send({success:0, err:error});
-        })
+    if (!message || !nom){
+        return res.status(400).send({success:0, err:"Une ou plusieurs informations sont manquantes"});
+    } else {
+        addCommentInDb(nom, message)
+            .then(comment => {
+                return res.status(200).send({success:1, data: comment});
+            })
+            .catch(error => {
+                return res.status(500).send({success:0, err:error});
+            })
+    }
 }
 
 export const getLivreOr = (req, res) => {

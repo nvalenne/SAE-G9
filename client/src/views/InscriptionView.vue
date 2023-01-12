@@ -2,12 +2,19 @@
   <div id="app">
     <div id="inscription">
       <div style="width:40%">
+        <v-alert
+            type="error"
+            dense
+            v-if="error"
+        >
+          {{error}}
+        </v-alert>
         <v-card elevation="4" class="cardInscription">
           <div class="headerInscription" style="margin-bottom: 15px;">
             <img alt="Roue" src="../assets/wheel.gif" style="width: 20%">
           </div>
           <div>
-                <v-form id="formInscription" @submit="submitForm" action="/" method="post">
+                <v-form id="formInscription" @submit.prevent="submitForm" action="/" method="post">
                   <v-col cols="6">
                     <label for="nom">Nom</label>
                     <v-text-field type="text" id="nom" v-model="form.nom" required></v-text-field>
@@ -49,7 +56,8 @@ export default {
         mail:'',
         username:'',
         password:''
-      }
+      },
+      error:''
     }
   },
   metaInfo: {
@@ -58,8 +66,14 @@ export default {
   methods : {
     submitForm(){
       axios.post('http://localhost:3000/account/inscription', this.form)
-          .then((res) => console.log(res))
-      this.$router.push('/')
+          .then((res) => {
+            console.log(res);
+            this.$router.push('/')
+          })
+          .catch((error) => {
+            this.error = error.response.status + " : " + error.response.data.err;
+            console.log(error)
+          })
     }
   }
 }
