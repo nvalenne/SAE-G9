@@ -1,4 +1,4 @@
-import {addContactInDB} from "../services/formulaire.service.js";
+import {addCommentInDb, addContactInDB, getAllComments} from "../services/formulaire.service.js";
 
 export const createFormulaireContact = (req, res) => {
     let message = req.body.message;
@@ -17,5 +17,23 @@ export const createFormulaireContact = (req, res) => {
 }
 
 export const createAvisLivreOr = (req, res) => {
+    let message = req.body.message;
+    let nom =  req.body.nom;
+    addCommentInDb(nom, message)
+        .then(comment => {
+            return res.status(200).send({success:1, data: comment});
+        })
+        .catch(error => {
+            return res.status(500).send({success:0, err:error});
+        })
+}
 
+export const getLivreOr = (req, res) => {
+    getAllComments()
+        .then(comments => {
+            return res.status(200).send({success:1, data: comments});
+        })
+        .catch(error => {
+            return res.status(400).send({success:0, err: error});
+        });
 }

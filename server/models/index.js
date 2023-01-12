@@ -33,6 +33,9 @@ import {Billet} from "./billet.model.js";
 db.billet = Billet(sequelize);
 import {FormulaireContact} from "./formulaire_contact.model.js";
 db.formulaire_contact = FormulaireContact(sequelize);
+import {Livre_Or} from "./livre_dor.model.js";
+db.livre_or = Livre_Or(sequelize);
+
 //
 // Relations
 //
