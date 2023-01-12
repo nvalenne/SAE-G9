@@ -27,7 +27,7 @@
                       <span>Type de stand : {{stand.type_stand.designation}}</span><br>
                       <span>Temps d'attente : {{stand.attente}} min</span><br>
                       <span>Prix : {{stand.prix}}€</span>
-                      <div>
+                      <div v-if="isAdmin || isPresta(stand.compte.id)" >
                         <router-link :to="{name:'prestataire', params:{id:stand.id_stand}}">
                           <v-btn depressed color="primary">Modifier</v-btn>
                         </router-link>
@@ -56,7 +56,7 @@ export default {
     }
   },
   computed:{
-    ...mapState(['stands']),
+    ...mapState(['stands','userConnected']),
     filterSearch() {
       let filter = this.stands.filter(stand => stand.nom.includes(this.search));
       //console.log(Array.isArray(this.attractions), this.attractions);
@@ -64,9 +64,25 @@ export default {
         return filter;
       else return this.stands;
     },
+    isAdmin(){
+      if(this.userConnected==null){
+        return false;
+      }
+      return this.userConnected.role=="admin"
+    }
   },
   created() {
     this.$store.dispatch('getStandsFromAPI');
+  },
+  methods: {
+    isPresta(id){
+      //si c'est son attraction
+      if(this.userConnected==null){
+        return false;
+      }
+      console.log(this.userConnected.id+"    "+id)
+      return this.userConnected.id == id;
+    }
   }
 }
 </script>

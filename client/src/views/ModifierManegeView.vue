@@ -16,9 +16,9 @@
         </v-card-text>
         <div>
           <v-form class="contactForm" action="#">
-            <v-text-field label="Nom de l'attraction" required value=""></v-text-field>
-            <v-text-field label="Prix enfant" prefix="€" required></v-text-field>
-            <v-text-field label="Prix adulte" prefix="€" required></v-text-field>
+            <v-text-field label="Nom de l'attraction" required :value="attraction.nom"></v-text-field>
+            <v-text-field label="Prix enfant" prefix="€" required :value="attraction.prix_enfant"></v-text-field>
+            <v-text-field label="Prix adulte" prefix="€" required :value="attraction.prix_adulte"></v-text-field>
             <v-select label="Type"></v-select>
             <v-btn color="info" type="submit">Modifier</v-btn>
           </v-form>
@@ -39,6 +39,9 @@ export default {
         prixAdulte:'',
       }
     }
+  },
+  props: {
+    attraction: Object,
   },
   computed:{
     idAttraction() {

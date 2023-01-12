@@ -12,7 +12,7 @@ export default {
     }
   },
   computed:{
-    ...mapState(['attractions']),
+    ...mapState(['attractions','userConnected']),
     filterSearch() {
       let filter = this.attractions.filter(attraction => attraction.nom.includes(this.search));
       //console.log(Array.isArray(this.attractions), this.attractions);
@@ -20,6 +20,13 @@ export default {
         return filter;
       else return this.attractions;
     },
+    isAdmin(){
+      if(this.userConnected==null){
+        return false;
+      }
+      return this.userConnected.role=="admin"
+    }
+
   },
   created() {
     this.$store.dispatch('getAttractionsFromAPI');
@@ -27,7 +34,16 @@ export default {
   methods:{
     saveAttractionSelected(attraction){
       this.attractionSelected = attraction;
+    },
+    isPresta(id){
+      //si c'est son attraction
+      if(this.userConnected==null){
+        return false;
+      }
+      console.log(this.userConnected.id+"    "+id)
+      return this.userConnected.id == id;
     }
+
   }
 }
 </script>
@@ -63,9 +79,9 @@ export default {
                       <span>Temps d'attente : {{attraction.attente}} min</span><br>
                       <span>Prix enfant : {{attraction.prix_enfant}}€   -   </span>
                       <span>Prix adulte : {{attraction.prix_adulte}}€</span>
-                      <div>
-                        <router-link :to="{name:'manege', params:{id:attraction.id_attraction}}" @click="saveAttractionSelected(attraction)">
-                          <v-btn depressed color="primary">Modifier</v-btn>
+                      <div v-if="isAdmin || isPresta(attraction.compte.id)">
+                        <router-link :to="{name:'manege', params:{id:attraction.id_attraction}}" >
+                          <v-btn  depressed color="primary" @click="saveAttractionSelected(attraction)">Modifier</v-btn>
                         </router-link>
                       </div>
                     </v-card-text>

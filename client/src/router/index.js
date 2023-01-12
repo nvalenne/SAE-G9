@@ -42,7 +42,7 @@ const routes = [
         component: () => import("@/views/ModifierManegeView"),
         meta: {
           authRequired: true,
-          rolePermission: ["prestataire"],
+          rolePermission: ["prestataire","admin"],
         },
       }
     ]
