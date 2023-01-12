@@ -11,7 +11,7 @@ export default new Vuex.Store({
     stands:[],
     attractionMap:null,
     userConnected:{},
-      billets:[]
+    billets:[],
   }),
   mutations: {
       setAttractionsContent(state, attractions){
@@ -31,7 +31,7 @@ export default new Vuex.Store({
       },
       setBilletsUser(state, billets){
           state.billets = billets;
-      }
+      },
   },
   actions: {
     async getAttractionsFromAPI(context) {

@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS formulaire;
 DROP TABLE IF EXISTS avis_attraction CASCADE;
 DROP TABLE IF EXISTS avis_stand CASCADE;
 DROP TABLE IF EXISTS menu CASCADE;
 DROP TABLE IF EXISTS service_stand CASCADE;
 DROP TABLE IF EXISTS service_attraction CASCADE;
+DROP TABLE IF EXISTS livre_or CASCADE;
 DROP TABLE IF EXISTS stand CASCADE;
 DROP TABLE IF EXISTS attraction CASCADE;
 DROP TABLE IF EXISTS billet CASCADE;
@@ -56,6 +56,15 @@ CREATE TABLE produit(
    PRIMARY KEY(id_produit)
 );
 
+CREATE TABLE billet(
+    id_billet SERIAL,
+    dateBillet DATE,
+    prix SMALLINT,
+    id_compte INTEGER NOT NULL,
+    id_attraction INTEGER,
+    PRIMARY KEY (id_billet),
+    FOREIGN KEY (id_compte) REFERENCES compte(id_compte) ON DELETE CASCADE ON UPDATE CASCADE
+);
 
 CREATE TABLE attraction(
    id_attraction SERIAL,
@@ -91,14 +100,12 @@ CREATE TABLE stand(
    PRIMARY KEY(id_stand)
 );
 
-CREATE TABLE billet(
-    id_billet SERIAL,
-    dateBillet DATE,
-    prix SMALLINT,
-    id_compte INTEGER NOT NULL,
-    id_attraction INTEGER,
-    PRIMARY KEY (id_billet),
-    FOREIGN KEY (id_compte) REFERENCES compte(id_compte) ON DELETE CASCADE ON UPDATE CASCADE 
+CREATE TABLE livre_or(
+    id_comment SERIAL,
+    date_comment DATE,
+    nom VARCHAR,
+    message VARCHAR,
+    PRIMARY KEY (id_comment)
 );
 
 CREATE TABLE service_stand(
@@ -144,15 +151,6 @@ CREATE TABLE avis_attraction(
     FOREIGN KEY(id_attraction) REFERENCES attraction(id_attraction) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(id_compte) REFERENCES compte(id_compte) ON DELETE CASCADE ON UPDATE CASCADE,
     PRIMARY KEY (id_attraction, id_compte, date)
-);
-
-CREATE TABLE formulaire(
-    id_formulaire INT,
-    email VARCHAR,
-    prenom VARCHAR,
-    nom VARCHAR,
-    message VARCHAR(255),
-    PRIMARY KEY (id_formulaire)
 );
 
 

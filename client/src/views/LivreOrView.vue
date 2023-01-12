@@ -8,22 +8,30 @@
           <label for="email">Message</label>
           <v-textarea type="text" id="message" v-model="form.message"></v-textarea>
 
-          <v-text-field></v-text-field>
-
-          <v-btn color="success" type="submit">Envoyer</v-btn>
+          <v-btn color="success" @click="submitForm">Envoyer</v-btn>
         </v-form>
       </div>
     </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "LivreOrView",
   data() {
     return {
       form: {
-
+        nom:'',
+        message:''
       }
+    }
+  },
+  methods:{
+    submitForm(){
+      axios.post('http://localhost:3000/formulaires/avis-livre-d-or', this.form)
+          .then((res) => console.log(res.data))
+      this.$router.push('/');
     }
   }
 }

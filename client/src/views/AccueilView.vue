@@ -4,7 +4,7 @@
       <v-img :src="require('../../public/manege/manege1.jpg')" class="image_principale">
       </v-img>
       <h1 class="titre_fete_foraine">Les Papiots</h1>
-      <h2 class="date">Du 1 juillet au 31 août 2023 à Belfort</h2>
+      <h2 class="date">Du 1 juillet au 15 juillet 2023 à Belfort</h2>
     </div>
     <div class="text">
       <p>

@@ -103,7 +103,8 @@ const routes = [
     name: 'mesBilletsView',
     component: () => import("@/views/MesBillets.vue"),
     meta: {
-      authRequired: false
+      authRequired: true,
+      rolePermission: ["utilisateur","prestataire"]
     },
   }
 ]
