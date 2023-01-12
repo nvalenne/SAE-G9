@@ -26,11 +26,20 @@ export default {
 <template>
   <div id="app">
     <v-container>
-      <v-row>
-        <div class="col-6">
-          {{this.billets}}
+      <div v-for="(billet, index) in this.billets" :key="index">
+        <div>
+          <v-card elevation="4" class="mb-3">
+            <v-card-text>
+              <span>Date : {{billet.date_billet}}</span><br>
+              <span>Prix : {{billet.prix}}€</span><br>
+              <span>Attraction : {{billet.id_attraction}}</span><br>
+            </v-card-text>
+          </v-card>
         </div>
-      </v-row>
+      </div>
+      <router-link :to="{name:'/acheter'}">
+        <v-btn depressed color="primary">Acheter</v-btn>
+      </router-link>
     </v-container>
   </div>
 </template>
