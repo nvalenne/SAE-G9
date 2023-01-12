@@ -1,7 +1,7 @@
 <template>
   <div class="accueil" style="display: flex;column-count: 6">
     <div id="map" >
-      <SVGMap @StandClick="test"/>
+      <SVGMap @StandClick="clickRect"/>
     </div>
     <div v-if="actractionisNull" style="margin-left: 20px;margin-top: 20px">
       <v-card elevation="4">
@@ -43,8 +43,9 @@ export default {
     }
   },
   methods: {
-    test(rect){
+    clickRect(rect){
       this.$store.dispatch('getAttractionsFromAPIwithNumEmpla',rect.id);
+
     },
   },
   computed:{
