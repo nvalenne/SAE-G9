@@ -35,7 +35,7 @@
             <span>Livre d'or</span>
           </router-link>
           <router-link to="/mes_billets" v-if="userConnected">
-            <v-icon size="24" color="white">mdi-comment</v-icon>
+            <v-icon size="24" color="white">mdi-ticket</v-icon>
             <span>Mes billets</span>
           </router-link>
         </div>
