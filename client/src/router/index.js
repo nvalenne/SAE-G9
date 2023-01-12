@@ -106,6 +106,30 @@ const routes = [
       authRequired: true,
       rolePermission: ["utilisateur","prestataire"]
     },
+  },
+  {
+    path: '/acheter_billet',
+    name: 'acheterBilletView',
+    component: () => import("@/views/AcheterBillet.vue"),
+    meta: {
+      authRequired: false
+    },
+  },
+  {
+    path: '/acheter_billet',
+    name: 'acheterBilletView',
+    component: () => import("@/views/AcheterBillet.vue"),
+    meta: {
+      authRequired: false
+    },
+  },
+  {
+    path: '/acheter_billet',
+    name: 'acheterBilletView',
+    component: () => import("@/views/AcheterBillet.vue"),
+    meta: {
+      authRequired: false
+    },
   }
 ]
 

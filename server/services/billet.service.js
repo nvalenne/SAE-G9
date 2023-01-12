@@ -1,4 +1,5 @@
 import db from "../models/index.js";
+import {getAllAttractions} from "./attraction.service.js";
 export const AllBillets = async (callback) => {
     try {
         const result = await db.billet.findAll({
@@ -31,11 +32,12 @@ export const BilletsByIDCompte = async (id, callback) => {
     }
 }
 
-export const Billet = async (date,prix,id_compte,id_attraction, callback) => {
+export const Billet = async (id_compte,id_attraction, callback) => {
     try {
+        let attraction = await (db.attraction.findByPk(id_attraction));
         const billet = await db.billet.create({
-            date_billet: date,
-            prix: prix,
+            date_billet: Date.now(),
+            prix: attraction.prix_adulte,
             id_compte: id_compte,
             id_attraction: id_attraction,
         });

@@ -24,11 +24,9 @@ export const getBilletsByIDCompte = (req, res) => {
 }
 
 export const postBillet = (req, res) => {
-    let date = req.body.date;
-    let prix = req.body.prix;
     let id_compte = req.params.id;
     let id_attraction = req.body.id_attraction;
-    Billet(date,prix,id_compte,id_attraction, (error, result) => {
+    Billet(id_compte,id_attraction, (error, result) => {
         if (error){
             console.error(error);
             res.status(400).send({success:1, content: error});

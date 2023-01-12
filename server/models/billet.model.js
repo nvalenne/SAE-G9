@@ -13,11 +13,11 @@ export const Billet = (sequelize) => {
         },
         prix: {
             field: 'prix',
-            type: DataType.SMALLINT
+            type: DataType.DECIMAL(5,2)
         },
         id_attraction: {
             field: 'id_attraction',
-            type: DataType.SMALLINT
+            type: DataType.INTEGER
         }
     }, {
         tableName: 'billet',

@@ -59,7 +59,7 @@ CREATE TABLE produit(
 CREATE TABLE billet(
     id_billet SERIAL,
     dateBillet DATE,
-    prix SMALLINT,
+    prix DECIMAL(5,2),
     id_compte INTEGER NOT NULL,
     id_attraction INTEGER,
     PRIMARY KEY (id_billet),
