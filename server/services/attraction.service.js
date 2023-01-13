@@ -31,7 +31,7 @@ export const getByID = async (id, callback) => {
     }
 }
 
-export const getTypeOfAnAttraction = async (id, callback) => {
+export const getTypeOfAnAttraction = async (id, nom, prix_enfant, prix_adulte) => {
     try {
         const result = await db.type_attraction.findAll({
             where: {
@@ -41,5 +41,23 @@ export const getTypeOfAnAttraction = async (id, callback) => {
         return callback(null, result);
     } catch (e) {
         return callback(e, []);
+    }
+}
+
+export const updateAttractionById = async (id, nom, prix_enfant, prix_adulte, taille_requise) => {
+    try {
+        await db.attraction.update({
+            nom: nom,
+            prix_enfant:prix_enfant,
+            prix_adulte:prix_adulte,
+            taille_requise:taille_requise
+        }, {
+            where:{
+                id_attraction:id
+            }
+        });
+    } catch (e) {
+        console.error(e);
+        return e;
     }
 }
