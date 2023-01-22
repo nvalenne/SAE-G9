@@ -205,7 +205,7 @@ INSERT INTO attraction(nom, prix_adulte, prix_enfant
                         , taille_requise, recette, nbr_clients_total
                         , attente, id_type_attraction, id_compte
                         , id_emplacement) VALUES
-('dégueulator',10,8,1.3,0,0,0,7,3,1),
+('le rickroll',10,8,1.3,0,0,0,7,3,1),
 ('space mountains',10,8,1.3,0.,0,0,1,3,2),
 ('rapide et furieux',10,8,1.3,0,0,0,1,3,3),
 ('splash',10,8,1.3,0,0,0,3,4,4),
