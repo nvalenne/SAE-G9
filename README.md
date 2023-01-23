@@ -23,4 +23,8 @@
 # Infos pratiques
 - **Les jeux de données sont présentes dans le fichier SQL (créationV2.sql)**
 - **Les deux versions du MCD sont disponibles dans la source du projet**
-- 
+- **[Storyboard de l'application](https://www.figma.com/file/npkg95YYZgwvQWUyyJlaTN/StoryBoaard-SAE3-G9?node-id=1%3A4)** 
+- Exemple de scénarios :
+  - Un utilisateur veut se renseigner sur une attraction
+  - Un prestataire veut modifier les informations sur son attraction
+  - Un administrateur valide une demande d'emplacement d'un prestataire.
