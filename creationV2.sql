@@ -183,6 +183,12 @@ INSERT INTO type_attraction (designation) VALUES
 ('reverse bungee'),
 ('bulles sur eau');
 
+-- USERNAME/PASSWORD FOR DATABASE
+
+-- Utilisateur(name/password) : user/user
+-- Prestataire(name/password) : prestataire/prestataire
+-- Administrateur(name/password) : admin/admin
+
 INSERT INTO compte (identifiant, mdp, mail, nom, role, prenom) VALUES
 ('user','$2b$10$/9bT6IFfv35nHgAxfC22N.S7YpC3nU55EV3kCwve3bi4FUj4xdoWu','user@quoi.feur','Jean','utilisateur','utilisateur'),
 ('admin','$2b$10$MN5HOyKBec2LzGDY1d9EqOVEoV5s5EMRzy3UHZOXM1/4/aI5FxYi2','admin@quoi.feur','Philippe','admin','admin'),
