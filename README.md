@@ -30,7 +30,7 @@
   - Un prestataire veut modifier les informations sur son attraction
   - Un administrateur valide une demande d'emplacement d'un prestataire.
   - **[Trello](https://trello.com/b/6GpVUf9D/f%C3%AAte-forraine)**
-- Identifiants :
-  - Utilisateur(name/password) : user/user
-  - Administrateur(name/password) : admin/admin
-  - Prestataire(name/password) : prestataire/prestataire
+- Identifiants (name/password):
+  - Utilisateur : user/user
+  - Administrateur : admin/admin
+  - Prestataire : prestataire/prestataire
