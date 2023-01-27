@@ -29,4 +29,8 @@
   - Un utilisateur veut se renseigner sur une attraction
   - Un prestataire veut modifier les informations sur son attraction
   - Un administrateur valide une demande d'emplacement d'un prestataire.
-- **[Trello](https://trello.com/b/6GpVUf9D/f%C3%AAte-forraine)**
+  - **[Trello](https://trello.com/b/6GpVUf9D/f%C3%AAte-forraine)**
+- Identifiants (name/password):
+  - Utilisateur : user/user
+  - Administrateur : admin/admin
+  - Prestataire : prestataire/prestataire
