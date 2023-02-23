@@ -59,6 +59,6 @@ app.use("/api-docs", swagger_ui.serve, swagger_ui.setup(swaggerJsDoc(swagger_opt
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}` );
-    db.sequelize.sync().then(r => console.log("yeah"));
+    db.sequelize.sync().then(r => console.log("All models synchronized"));
 
 });

@@ -3,7 +3,7 @@
     <div id="map" >
       <SVGMap @StandClick="clickRect"/>
     </div>
-    <div v-if="actractionisNull" style="margin-left: 20px;margin-top: 20px">
+    <div v-if="!actractionisNull" style="margin-left: 30px;margin-top: 20px">
       <v-card elevation="4">
         <v-card-title>{{attractionNom}}</v-card-title>
         <v-img
@@ -25,7 +25,12 @@
         </div>
 -->
       </v-card>
-
+    </div>
+    <div v-else>
+      <v-btn class="green white--text">
+        <v-icon color="red">mdi-add</v-icon>
+        <span>Ajouter un nouveau manège</span>
+      </v-btn>
     </div>
   </div>
 </template>
@@ -51,7 +56,7 @@ export default {
   computed:{
     ...mapState(['attractionMap']),
     actractionisNull(){
-      return this.attractionMap !=null
+      return this.attractionMap==null
     },
     attractionNom(){
       return this.attractionMap.nom.toUpperCase();

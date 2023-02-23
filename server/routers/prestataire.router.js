@@ -18,6 +18,19 @@ let prestataire_router = express.Router();
  */
 prestataire_router.get("/", getPrestataires);
 
+/**
+ * @swagger
+ * /prestataires/:id:
+ *  get:
+ *      summary: Obtains prestataire depending on id
+ *      tags:
+ *          - Prestataires
+ *      responses:
+ *          '200':
+ *              description: A successful result
+ *          '400':
+ *              description: Bad Request
+ */
 prestataire_router.get("/:id", getPrestataireByID);
 
 

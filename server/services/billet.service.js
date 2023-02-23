@@ -1,5 +1,4 @@
 import db from "../models/index.js";
-import {getAllAttractions} from "./attraction.service.js";
 export const AllBillets = async (callback) => {
     try {
         const result = await db.billet.findAll({
@@ -32,7 +31,7 @@ export const BilletsByIDCompte = async (id, callback) => {
     }
 }
 
-export const Billet = async (id_compte,id_attraction, callback) => {
+export const create_b = async (id_compte,id_attraction, callback) => {
     try {
         let attraction = await (db.attraction.findByPk(id_attraction));
         const billet = await db.billet.create({
@@ -44,5 +43,18 @@ export const Billet = async (id_compte,id_attraction, callback) => {
         return callback(null, billet.dataValues);
     } catch (e){
         return callback(e, []);
+    }
+}
+
+export const delete_b = async (id, callback) => {
+    try {
+        const billet_deleted = await db.billet.destroy({
+            where: {
+                id_billet: id
+            }
+        })
+        return callback(null, billet_deleted)
+    } catch (e) {
+        return callback(e, "Echec de la suppression du billet")
     }
 }

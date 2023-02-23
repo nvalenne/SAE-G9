@@ -42,6 +42,7 @@ export const getTypeAttractionByID = (req, res) => {
 
 export const updateAttraction = (req, res) => {
     let {id, nom, prix_enfant, prix_adulte, taille_requise} = req.body;
+    console.log(req.body)
     if (!id || !nom || !prix_enfant || !prix_adulte || !taille_requise){
         return res.status(400).send({success:0, error: "Une ou plusieurs informations sont manquantes"})
     } else {
@@ -54,4 +55,8 @@ export const updateAttraction = (req, res) => {
                 return res.status(400).send({success:0, error:err});
             });
     }
+}
+
+export const createRequestAttraction = (req, res) => {
+
 }

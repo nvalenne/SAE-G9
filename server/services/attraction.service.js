@@ -61,3 +61,7 @@ export const updateAttractionById = async (id, nom, prix_enfant, prix_adulte, ta
         return e;
     }
 }
+
+export const addAttraction = async (id,type_attraction, nom, prix_enfant, prix_adulte, taille_requise) => {
+
+}
