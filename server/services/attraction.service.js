@@ -62,6 +62,23 @@ export const updateAttractionById = async (id, nom, prix_enfant, prix_adulte, ta
     }
 }
 
-export const addAttraction = async (id,type_attraction, nom, prix_enfant, prix_adulte, taille_requise) => {
-
+export const insertAttraction = async (nom, prix_enfant, prix_adulte, taille_requise, id_type_attraction, id_compte, callback) => {
+    try {
+        const new_attraction = await db.attraction.create({
+            nom: nom,
+            prix_adulte: prix_adulte,
+            prix_enfant: prix_enfant,
+            taille_requise: taille_requise,
+            recette: 0.0,
+            nbr_clients_total: 0,
+            attente: 0,
+            id_compte: id_compte,
+            id_type_attraction: id_type_attraction,
+            id_emplacement: null
+        });
+        return callback(null, new_attraction.dataValues)
+    } catch (e) {
+        return callback(e, "Erreur lors de la création du manège")
+    }
 }
+

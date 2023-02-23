@@ -2,7 +2,8 @@ import {
     getAllAttractions,
     getByID,
     getTypeOfAnAttraction,
-    updateAttractionById
+    updateAttractionById,
+    insertAttraction
 } from "../services/attraction.service.js";
 
 export const getAttractions = (req, res) =>{
@@ -57,6 +58,13 @@ export const updateAttraction = (req, res) => {
     }
 }
 
-export const createRequestAttraction = (req, res) => {
+export const createAttraction = (req, res) => {
+    let {nom, prix_enfant, prix_adulte, taille_requise, id_type_attraction, id_compte} = req.body;
+    console.log(req.body)
+    if (!nom || !prix_enfant || !prix_adulte || !taille_requise || !id_type_attraction || !id_compte){
+        return res.status(400).send({success:0, error: "Une ou plusieurs informations sont manquantes"})
+    } else {
+        insertAttraction(nom, prix_enfant, prix_adulte, taille_requise, id_type_attraction, id_compte, callback)
+    }
 
 }
