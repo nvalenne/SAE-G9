@@ -75,6 +75,7 @@ CREATE TABLE attraction(
    recette DECIMAL(6,2),
    nbr_clients_total INT,
    attente INT,
+   is_confirmed BOOLEAN NOT NULL,
    id_type_attraction INT NOT NULL,
    id_compte INT NOT NULL,
    id_emplacement INT NOT NULL,
@@ -156,16 +157,13 @@ CREATE TABLE avis_attraction(
 
 
 INSERT INTO emplacement (prix, taille) VALUES
-(10,100),
-(10,100),
-(10,100),
-(10,100),
-(10,100),
-(10,100),
-(10,100),
-(10,100),
-(10,100)
-;
+(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),
+(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),
+(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),
+(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),
+(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),
+(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),(10,100),
+(10,100),(10,100),(10,100),(10,100),(10,100),(10,100);
 
 INSERT INTO type_stand (designation) VALUES
 ('pêche aux canards'),
@@ -210,12 +208,12 @@ INSERT INTO produit (nom_produit) VALUES
 INSERT INTO attraction(nom, prix_adulte, prix_enfant
                         , taille_requise, recette, nbr_clients_total
                         , attente, id_type_attraction, id_compte
-                        , id_emplacement) VALUES
-('le rickroll',10,8,1.3,0,0,0,7,3,1),
-('space mountains',10,8,1.3,0.,0,0,1,3,2),
-('rapide et furieux',10,8,1.3,0,0,0,1,3,3),
-('splash',10,8,1.3,0,0,0,3,4,4),
-('Spaceglider',10,8,1.3,0,0,0,6,4,5);
+                        , id_emplacement,is_confirmed) VALUES
+('le rickroll',10,8,1.3,0,0,0,7,3,1,true),
+('space mountains',10,8,1.3,0.,0,0,1,3,2,true),
+('rapide et furieux',10,8,1.3,0,0,0,1,3,3,true),
+('splash',10,8,1.3,0,0,0,3,4,4,true),
+('Spaceglider',10,8,1.3,0,0,0,6,4,5,true);
 
 INSERT INTO stand (nom, prix, recette, nbr_clients_total, attente, id_type_stand, id_compte, id_emplacement) VALUES
 ('canards',10,0,0,0,1,3,6),

@@ -59,12 +59,18 @@ export const updateAttraction = (req, res) => {
 }
 
 export const createAttraction = (req, res) => {
-    let {nom, prix_enfant, prix_adulte, taille_requise, id_type_attraction, id_compte} = req.body;
+    let {nom, prix_enfant, prix_adulte, taille_requise, id_type_attraction, id_compte,id_emplacement} = req.body;
     console.log(req.body)
-    if (!nom || !prix_enfant || !prix_adulte || !taille_requise || !id_type_attraction || !id_compte){
+    if (!nom || !prix_enfant || !prix_adulte || !taille_requise || !id_type_attraction || !id_compte || !id_emplacement){
         return res.status(400).send({success:0, error: "Une ou plusieurs informations sont manquantes"})
     } else {
-        insertAttraction(nom, prix_enfant, prix_adulte, taille_requise, id_type_attraction, id_compte, callback)
+        insertAttraction(nom, prix_enfant, prix_adulte, taille_requise, id_type_attraction, id_compte, id_emplacement,(error,result)=>{
+            if (error){
+                return res.status(400).send({success:0, error:error});
+            }
+            return res.status(200).send({sucess:1, data:result});
+        })
+
     }
 
 }

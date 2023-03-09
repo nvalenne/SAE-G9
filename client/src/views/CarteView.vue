@@ -30,6 +30,7 @@
       <v-btn class="green white--text">
         <v-icon color="red">mdi-add</v-icon>
         <span>Ajouter un nouveau manège</span>
+
       </v-btn>
     </div>
   </div>

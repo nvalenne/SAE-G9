@@ -3,7 +3,7 @@ import {
     getAttractions,
     getAttractionByID,
     getTypeAttractionByID,
-    updateAttraction
+    updateAttraction, createAttraction
 } from "../controllers/attraction.controller.js";
 let attraction_router = express.Router();
 
@@ -102,5 +102,8 @@ attraction_router.get("/types_attraction/:id", getTypeAttractionByID);
  *              description: Bad Request
  */
 attraction_router.put("/", updateAttraction);
+
+attraction_router.post("/inscription", createAttraction);
+
 
 export default attraction_router;

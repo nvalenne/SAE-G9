@@ -14,28 +14,33 @@ export const Attraction = (sequelize) => {
             },
             prix_adulte: {
                 field: 'prix_adulte',
-                type: DataType.DECIMAL(5,2),
+                type: DataType.DECIMAL(5, 2),
             },
             prix_enfant: {
                 field: 'prix_enfant',
-                type: DataType.DECIMAL(5,2),
+                type: DataType.DECIMAL(5, 2),
             },
             taille_requise: {
                 field: 'taille_requise',
-                type: DataType.DECIMAL(3,2),
+                type: DataType.DECIMAL(3, 2),
             },
             recette: {
                 field: 'recette',
-                type: DataType.DECIMAL(6,2),
+                type: DataType.DECIMAL(6, 2),
             },
             nbr_clients_total: {
                 field: 'nbr_clients_total',
                 type: DataType.INTEGER,
             },
+            is_confirmed: {
+                field: 'is_confirmed',
+                type: DataType.BOOLEAN,
+            },
             attente: {
                 field: 'attente',
                 type: DataType.INTEGER,
-            }
+            },
+
         }, {
             tableName: "attraction",
             timestamps: false

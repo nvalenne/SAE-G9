@@ -71,7 +71,7 @@ db.billet.hasOne(db.attraction, {foreignKey: 'id_attraction'});
 db.compte.hasMany(db.billet, {foreignKey: 'id_compte'});
 
 // Relation entre Emplacement et Attraction
-db.attraction.belongsTo(db.emplacement, {foreignKey: 'id_emplacement'});
+db.attraction.belongsTo(db.emplacement, {foreignKey:'id_emplacement'});
 db.emplacement.hasOne(db.attraction, {foreignKey:'id_emplacement'});
 
 // Relation entre Emplacement et Stand
