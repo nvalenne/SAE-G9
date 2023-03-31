@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SAE_S4</string>
+    <string name="les_papiots">Les Papiots</string>
+    <string name="descriptionAccueil">La grande fête foraine de l’Est de la France, Les Papiots s’installent tous les ans pendant près de deux mois, de début juillet à fin août, près du centre-ville de Belfort. À cette occasion, un peu plus de 80 forains en tous genres (manèges, jeux, boutiques, stands de nourriture) sont présents lors de ce grand événement.</string>
+    <string name="sponsor">Sponsor</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

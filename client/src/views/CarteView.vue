@@ -27,28 +27,36 @@
       </v-card>
     </div>
     <div v-else>
-      <v-btn class="green white--text">
+      <v-btn @click="afficheForm" class="green white--text">
         <v-icon color="red">mdi-add</v-icon>
         <span>Ajouter un nouveau manège</span>
-
       </v-btn>
+      <div v-if="form">
+        <AjouterManegeView></AjouterManegeView>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import SVGMap from "@/components/SVGMap";
 import {mapState} from "vuex";
+import AjouterManegeView from "@/views/AjouterManegeView";
 export default {
   name: 'CarteView',
   components: {
+    AjouterManegeView,
     SVGMap,
   },
   data(){
     return {
+      form: false,
       attractionClicked:[],
     }
   },
   methods: {
+    afficheForm(){
+      this.form= !this.form;
+    },
     clickRect(rect){
       this.$store.dispatch('getAttractionsFromAPIwithNumEmpla',rect.id);
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/scrollView">
+    <fragment
+        android:id="@+id/scrollView"
+        android:name="com.example.sae_s4.acceuil"
+        android:label="@string/les_papiots"
+        tools:layout="@layout/fragment_acceuil" />
+    <fragment
+        android:id="@+id/carte"
+        android:name="com.example.sae_s4.Carte"
+        android:label="Carte"
+        tools:layout="@layout/fragment_carte" />
+    <fragment
+        android:id="@+id/liste_manege"
+        android:name="com.example.sae_s4.liste_manege"
+        android:label="Liste manège"
+        tools:layout="@layout/fragment_liste_manege" />
+    <fragment
+        android:id="@+id/liste_presta"
+        android:name="com.example.sae_s4.liste_presta"
+        android:label="Liste prestataire"
+        tools:layout="@layout/fragment_liste_presta" />
+</navigation>
